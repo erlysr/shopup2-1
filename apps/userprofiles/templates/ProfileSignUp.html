@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Profile Sign Up</title>
+</head>
+<body>
+	<p>
+		Bienvenido a ShopUp: 
+	</p>
+	<p> ShopUp requiere algunos datos para tu perfil, aceptando las condiciones de uso.</p>
+	<form action="", method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Ingresar">
+	</form>
+</body>
+</html>

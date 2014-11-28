@@ -1,0 +1,27 @@
+
+class LoginView(TemplateView):
+	template_name = 'login.html'
+	
+
+	def get_context_data(self, **kwargs):
+		context = super(LoginView, self).get_context_data(**kwargs)
+		is_auth = False
+		name = None
+		lastname = None
+		url_avatar = None
+
+		if self.request.user.is_authenticated():
+			is_auth = True
+			name = self.request.user.first_name
+			lastname = self.request.user.last_name
+			
+
+		data = {
+		'is_auth': is_auth,
+		'name': name,
+		'lastname': lastname,
+		'userprofile': self.get_userprofile()
+		}
+
+		context.update(data)
+		return context

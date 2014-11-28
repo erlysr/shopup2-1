@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta description="Shop-up, renta tu espacio">
+	<title>Topups, renta tu espacio - Shopup</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:8000/media/css/estilos-shop-up.css">
+</head>
+<body>
+	<!-- --------------------------HEADER----------------------------- -->
+	<header id="encabezado">
+		<figure>
+			<img class="logo-shop-up" src="http://localhost:8000/media/img/logo_1.png"></img>
+		</figure>
+		<div class="redes-iconos">
+			<a href="http://www.facebook.com/ShopUpMexico" target="_blank">
+				<figure>
+					<img class="icono" src="http://localhost:8000/media/img/fb.jpg"></img>
+				</figure>
+			</a>
+			<a href="http://www.twitter.com/ShopUpMx" target="_blank">
+				<figure>
+					<img class="icono" src="http://localhost:8000/media/img/twitter.jpg"></img>
+				</figure>
+			</a>
+		</div>
+		<figure>
+			<img class="logo-buscar" src="http://localhost:8000/media/img/search.jpg"></img>
+		</figure>
+		<ul class="menu-superior">
+			<li class="registra-tienda-opcion">
+				<a class="registra-tienda-link" href="#">Registrar mi tienda</a>
+			</li>
+			<li>
+				<a class="contacto-opcion" href="#">Contacto</a>
+			</li>
+		</ul>	
+	</header>
+
+	<!-- ----------------IMAGEN PRINCIPAL----------------------------- -->
+	<section id="principal-section">
+		<figure>
+			<img class="imagen-fondo" src="http://localhost:8000/media/img/fondocortado.jpg"></img>
+		</figure>
+		<figure>
+			<img class="shop-up-logo" src="http://localhost:8000/media/img/logo_2.png"></img>
+		</figure>
+		<a class="funciona-boton-link" href="#">
+			<div class="funciona-boton">
+				¿Como funciona?
+			</div>
+		</a>
+	</section>
+
+	<!-- ----------------------MARQUESINA----------------------------- -->
+	<section id="marquesina-section">
+		<figure>
+			<img class="marquesina" src="http://localhost:8000/media/img/marquesina.png"></img>
+		</figure>
+		<div class="labels-cont">
+			<p class="titulo-label1">lo mejor de shop-
+			</p>
+			<p class="titulo-label2">up</p>
+		</div>
+		<figure class="pleca-curvas">
+			<img src="http://localhost:8000/media/img/lineacurva.png"></img>
+		</figure>
+	</section>
+
+	<!-- -------------------------TIENDAS RENGLON -------------------- -->
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+
+					<p class="titulo-label1">Lo
+					</p> 
+					<p class="titulo-label2">popular
+					</p>	
+				</div>
+				<a class="quiero-mas-boton" href="/stores_topups/?page=2">¡Quiero ver más!
+				</a>
+			</div>
+			{% for stores in object_list %}
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							{{ stores.store_name }}
+						</p>
+						<!--
+						<p class="texto-verde">
+							-condesa
+						</p> -->
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="http://localhost:8000/media/{{ stores.image1 }}"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="http://localhost:8000/media/img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							${{ stores.price }}
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					{{ stores.tabulator }}
+				</p>
+				<p class="publicado-por">
+					Publicado por: {{ stores.contact }}
+				</p>
+			</div>
+			{% empty %}
+				<div class="espacio-cont">No hay tiendas todavia</div>
+			{% endfor %}
+			
+		</div>
+	</section>
+
+	<!-- ---------------------------------FOOTER---------------------- -->
+	<footer>
+		<div class="piplusone-logos">
+			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">
+				<div class="iconos">
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="http://localhost:8000/media/img/pi.png"></img>
+					</figure>
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="http://localhost:8000/media/img/plus.png"></img>
+					</figure>
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="http://localhost:8000/media/img/one.png"></img>
+					</figure>
+				</div>
+			</a>
+		</div>
+		<div class="powered-label">Powered by 
+			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">PI.PLUS.ONE</a>
+		</div>
+	</footer>
+</body>
+
+</html>

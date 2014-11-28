@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tiendas Shop-up</title>
+</head>
+<body>
+	<section>
+		<p>
+			Nombre: {{store.store_name}}
+		</p>
+		<p>
+			Giro: {{store.activity}}
+		</p>
+		<p>
+			Dimensiones: {{store.dimentions_width}} x {{store.dimentions_length}} mts.
+		</p>
+		<p>
+			Teléfono: {{store.store_phone}}
+		</p>
+		<p>
+			Foto: {{store.image1}}
+		</p>
+		<img src="/media/{{store.image1}}">
+		</img>
+		<p>
+			Contacto: {{store.contact.firstname}} {{store.contact.lastname}}
+		</p>
+		<p>
+			Tel. Contacto: {{store.contact.contact_phone}}
+		</p>
+	</section>
+</body>
+</html>

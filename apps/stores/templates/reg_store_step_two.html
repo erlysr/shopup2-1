@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="col-md-9" style="margin-top: 3em;">
+    {% crispy form %}
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+<script>
+  $(function() {
+    $("#id_delegacion_municipio").on("change", function(){
+      $.ajax({
+        data: {'id': $(this).val()},
+        url: "{% url 'core:ajax-postal-codes' %}",
+        type: "get",
+        success: function (data) {
+          var html = "<option value=''> --Seleccionar Código Postal-- </option>";
+          for (var i = 0; i < data.length; i++) {
+            html += "<option value='" + data[i].pk + "'>" + data[i].fields.postal_code_key + "</option>";
+          }
+          $("select#id_codigo_postal").html(html);
+        }
+      });
+    });
+  });
+</script>
+{% endblock extra_js %}

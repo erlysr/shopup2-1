@@ -1,0 +1,73 @@
+[
+{
+    "fields": {
+        "country_name": "M\u00e9xico"
+    },
+    "model": "core.country",
+    "pk": 1
+},
+{
+    "fields": {
+        "country": 1,
+        "state_name": "Distrito Federal"
+    },
+    "model": "core.state",
+    "pk": 1
+},
+{
+    "fields": {
+        "city_name": "Ciudad de M\u00e9xico",
+        "state": 1
+    },
+    "model": "core.city",
+    "pk": 1
+},
+{
+    "fields": {
+        "city": 1,
+        "town_name": "Gustavo A.Madero"
+    },
+    "model": "core.town",
+    "pk": 1
+},
+{
+    "fields": {
+        "city": 1,
+        "town_name": "Coyoacan"
+    },
+    "model": "core.town",
+    "pk": 2
+},
+{
+    "fields": {
+        "postal_code_key": "07300",
+        "town": 1
+    },
+    "model": "core.postalcode",
+    "pk": 1
+},
+{
+    "fields": {
+        "postal_code_key": "04500",
+        "town": 2
+    },
+    "model": "core.postalcode",
+    "pk": 2
+},
+{
+    "fields": {
+        "postal_code": 1,
+        "name": "Lindavista"
+    },
+    "model": "core.neighborhood",
+    "pk": 1
+},
+{
+    "fields": {
+        "postal_code": 2,
+        "name": "Ampliaci\u00f3n Pedregal de San Angel"
+    },
+    "model": "core.neighborhood",
+    "pk": 2
+}
+]

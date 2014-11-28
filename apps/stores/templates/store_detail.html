@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta description="Shop-up, renta tu espacio">
+	<title>Shop-up, renta tu espacio</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:8000/media/css/estilos-shop-up.css">
+</head>
+<body>
+	<!-- --------------------------HEADER----------------------------- -->
+	<header id="encabezado">
+		<figure>
+			<img class="logo-shop-up" src="http://localhost:8000/media/img/logo_1.png"></img>
+		</figure>
+		<div class="redes-iconos">
+			<a href="http://www.facebook.com/ShopUpMexico" target="_blank">
+				<figure>
+					<img class="icono" src="http://localhost:8000/media/img/fb.jpg"></img>
+				</figure>
+			</a>
+			<a href="http://www.twitter.com/ShopUpMx" target="_blank">
+				<figure>
+					<img class="icono" src="http://localhost:8000/media/img/twitter.jpg"></img>
+				</figure>
+			</a>
+		</div>
+		<figure>
+			<img class="logo-buscar" src="http://localhost:8000/media/img/search.jpg"></img>
+		</figure>
+		<ul class="menu-superior">
+			<li class="registra-tienda-opcion">
+				<a class="registra-tienda-link" href="#">Registrar mi tienda</a>
+			</li>
+			<li>
+				<a class="contacto-opcion" href="#">Contacto</a>
+			</li>
+		</ul>	
+	</header>
+
+	<!-- -------------------------FOTOS TIENDA---------------------- -->
+	<section id="resumen-tienda">
+		<div class="encabezado-tienda">
+			<div class="cabeza-espacio">
+				<p class="texto1">{{ object.store_name }}</p>
+				<p class="texto2">-{{ object.tabulator }}</p>
+				<div class="estrellas">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+				</div>
+				<p class="ubicacion">{{ object.activity}} // Publicado por: {{ object.contact }}</p>
+			</div>
+		</div>
+		<div class="datos-cont">
+			<div class="datos-col-1">
+				<div class="espacio-flecha">
+					<a class="icon-chevron-left" href=""></a>
+				</div>
+				<div class="fotos-cont">
+					<figure>
+						<img class="foto-princ" src="http://localhost:8000/media/{{ object.image1 }}"></img>
+					</figure>
+					<div class="fotos-small">
+						<figure>
+							<img class="foto-sm-0" src="http://localhost:8000/media/{{ object.image1 }}"></img>
+						</figure>
+						<figure>
+							<img class="foto-sm" src="http://localhost:8000/media/{{ object.image2 }}"></img>
+						</figure>
+						<figure>
+							<img class="foto-sm" src="http://localhost:8000/media/{{ object.image3 }}"></img>
+						</figure>
+						<figure>
+							<img class="foto-sm" src="http://localhost:8000/media/{{ object.image4 }}"></img>
+						</figure>
+					</div>
+				</div>
+				<div class="espacio-flecha">
+					<a class="icon-chevron-right" href=""></a>
+				</div>
+			</div>
+			<div class="datos-col-2">
+				<div class="renglones-cont">
+					<div class="ren-1">
+						<p>renta este lugar</p>
+					</div>
+					<div class="ren-2">
+						<p class="precio">$ {{ object.price }}</p>
+						<p class="por-sel">por dia ^</p>
+					</div>
+					<div class="ren-3">
+						<div class="boton-enviar">
+							Enviar Solicitud
+						</div>
+						<p>*La mensualidad está basada en 4 semanas</p>
+					</div>
+				</div>
+				<div class="ren-4">
+					<a class="icon-checkmark" class="icono-paloma" href=""></a>
+					<p>usuario verificado</p>
+				</div>
+				<div class="ren-5">
+					<a class="icon-location" href=""></a>
+					<p>
+						{{ object.address }} {{ object.address.postal_code.postal_code_key }},
+					
+						{{ object.address.postal_code.town.town_name }}, {{ object.address.postal_code.town.city.city_name }}, {{ object.address.postal_code.town.city.state.state_name}}, {{ object.address.postal_code.town.city.state.country.country_name}} 
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ------------------------DETALLES TIENDA---------------------- -->
+	<section id="detalles-tienda">
+		<div class="detalles-cont">
+			<div class="detalles-col-1">
+				<div class="tabla-detalles">
+					<div class="titulo">
+						características
+					</div>
+					<ul class="lista-opciones">
+					
+						<li class="en-{{ object.wireless }}">Wi-fi</li>
+					
+						<li class="en-{{ object.stands }}"> Estanterías</li>
+						<li class="en-{{ object.repisas }}">Repisas</li>
+						<li class="en-{{ object.boards }}">Mesas</li>
+						<li class="en-{{ object.lighting }}">Iluminación</li>
+					</ul>
+					<ul class="lista-opciones">
+						<liclass="en-{{ object.electricity }}">Electricidad</li>
+						<li class="en-{{ object.water }}">Agua</li>
+						<li class="en-{{ object.airconditioning }}">Aire Acondicionado</li>
+						<li class="en-{{ object.toilets }}">Baño</li>
+						<li class="en-{{ object.heating }}">Calefacción</li>
+					</ul>
+					<ul class="lista-opciones">
+						<li class="en-{{ object.elevator }}">Elevador</li>
+						<li class="en-{{ object.parkinglot }}">Estacionamiento</li>
+					</ul>
+				</div>
+				<div class="tabla-detalles">
+					<div class="titulo">
+						lugares cercanos
+					</div>
+					<ul class="lista-opciones">
+						<li class="en-{{ object.wireless }}">Banco</li>
+						<li>Comida rápida</li>
+						<li class="en-{{ object.wireless }}">Estación de retro</li>
+						
+					</ul>
+					<ul class="lista-opciones">
+						<li>Áreas recreativas</li>
+						<li class="en-{{ object.wireless }}">Escuela</li>
+					</ul>
+					<ul class="lista-opciones">
+						<li>Tiendas</li>
+						<li class="en-{{ object.wireless }}">Estacionamiento</li>
+					</ul>
+				</div>
+			</div>
+			<div class="detalles-col-2">
+				<p>disponibilidad de este local</p>
+				<figure>
+					<img class="calendario" src="http://localhost:8000/media/img/tiendas/calendario.png"></img>
+				</figure>
+				<p>alrededor de este local</p>
+				<figure>
+					<img class="mapa" src="http://localhost:8000/media/img/tiendas/mapa.png"></img>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<!-- ----------------------MARQUESINA----------------------------- -->
+	<!--
+	<section id="marquesina-section">
+		<figure>
+			<img class="marquesina" src="http://localhost:8000/media/img/marquesina.png"></img>
+		</figure>
+		<div class="labels-cont">
+			<p class="titulo-label1">recomendaciones
+			</p>
+		</div>
+		<figure class="pleca-curvas">
+			<img src="http://localhost:8000/media/img/lineacurva.png"></img>
+		</figure>
+	</section>
+-->
+	<!-- -------------------------TIENDAS----------------------------- -->
+	<!--
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+					<p class="titulo-label1">espacios para tí
+					</p>
+				</div>
+				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
+				</a>
+			</div>
+			
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-condesa
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="http://localhost:8000/media/img/tiendas/tienda2.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="http://localhost:8000/media/img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2300
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En plaza comercial
+				</p>
+				<p class="publicado-por">
+					Publicado por: Alejandro Jiménez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="http://localhost:8000/media/img/tiendas/tienda4.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="http://localhost:8000/media/img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2500
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En espacio de arte
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jimena Pardo
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="http://localhost:8000/media/img/tiendas/tienda1.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="http://localhost:8000/media/img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En boutique
+				</p>
+				<p class="publicado-por">
+					Publicado por: Renata Villaseñor
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-polanco
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="http://localhost:8000/media/img/tiendas/tienda3.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="http://localhost:8000/media/img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$3000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En galería
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jaime Martínez
+				</p>
+			</div>
+			
+		</div>
+	</section> -->
+	<!-- ---------------------------------FOOTER---------------------- -->
+	<footer>
+		<div class="piplusone-logos">
+			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">
+				<div class="iconos">
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="http://localhost:8000/media/img/pi.png"></img>
+					</figure>
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="http://localhost:8000/media/img/plus.png"></img>
+					</figure>
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="http://localhost:8000/media/img/one.png"></img>
+					</figure>
+				</div>
+			</a>
+		</div>
+		<div class="powered-label">Powered by 
+			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">PI.PLUS.ONE</a>
+		</div>
+	</footer>
+</body>
+
+</html>

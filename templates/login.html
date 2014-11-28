@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta description="Shop-up, renta tu espacio">
+	<title>Shop-up, renta tu espacio</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos-shop-up.css">
+</head>
+<body>
+	<!-- --------------------------HEADER----------------------------- -->
+	<header id="encabezado">
+		<figure>
+			<img class="logo-shop-up" src="img/logo_1.png"></img>
+		</figure>
+		<div class="redes-iconos">
+			<a href="http://www.facebook.com/ShopUpMexico" target="_blank">
+				<figure>
+					<img class="icono" src="img/fb.jpg"></img>
+				</figure>
+			</a>
+			<a href="http://www.twitter.com/ShopUpMx" target="_blank">
+				<figure>
+					<img class="icono" src="img/twitter.jpg"></img>
+				</figure>
+			</a>
+		</div>
+		<figure>
+			<img class="logo-buscar" src="img/search.jpg"></img>
+		</figure>
+		{% if is_auth %}
+		<p class="nombre-usuario">Bienvenido: {{ name }}</p>
+		<a class="salir-link" href="logout.html">Salir</a>
+		{% else %}
+		<a class="salir-link" href="login.html">Entrar</a>
+		{% end if %}
+		<ul class="menu-superior">
+			<li class="registra-tienda-opcion">
+				<a class="registra-tienda-link" href="#">Registrar mi tienda</a>
+			</li>
+			<li>
+				<a class="contacto-opcion" href="#">Contacto</a>
+			</li>
+		</ul>	
+	</header>
+
+	<!-- ----------------IMAGEN PRINCIPAL----------------------------- -->
+	<section id="principal-section">
+		<figure>
+			<img class="imagen-fondo" src="img/fondocortado.jpg"></img>
+		</figure>
+		<figure>
+			<img class="shop-up-logo" src="img/logo_2.png"></img>
+		</figure>
+		<a class="funciona-boton-link" href="#">
+			<div class="funciona-boton">
+				¿Como funciona?
+			</div>
+		</a>
+	</section>
+
+	<!-- ----------------------MARQUESINA----------------------------- -->
+	<section id="marquesina-section">
+		<figure>
+			<img class="marquesina" src="img/marquesina.png"></img>
+		</figure>
+		<div class="labels-cont">
+			<p class="titulo-label1">lo mejor de shop-
+			</p>
+			<p class="titulo-label2">up</p>
+		</div>
+		<figure class="pleca-curvas">
+			<img src="img/lineacurva.png"></img>
+		</figure>
+	</section>
+
+	<!-- -------------------------TIENDAS RENGLON -------------------- -->
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+					<p class="titulo-label1">lo
+					</p>
+					<p class="titulo-label2">popular
+					</p>	
+				</div>
+				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
+				</a>
+			</div>
+	
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-condesa
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda2.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2300
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En plaza comercial
+				</p>
+				<p class="publicado-por">
+					Publicado por: Alejandro Jiménez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda4.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2500
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En espacio de arte
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jimena Pardo
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda1.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En boutique
+				</p>
+				<p class="publicado-por">
+					Publicado por: Renata Villaseñor
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-polanco
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda3.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$3000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En galería
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jaime Martínez
+				</p>
+			</div>
+			
+		</div>
+	</section>
+
+	<!-- ----------------------MARQUESINA----------------------------- -->
+	<section id="marquesina-section">
+		<figure>
+			<img class="marquesina" src="img/marquesina.png"></img>
+		</figure>
+		<div class="titulo-labels-cont2">
+			<p class="titulo-label1">zonas shop-
+			</p>
+			<p class="titulo-label2">up</p>
+		</div>
+		<figure class="pleca-curvas">
+			<img src="img/lineacurva.png"></img>
+		</figure>
+	</section>
+
+	<!-- -------------------------TIENDAS RENGLON -------------------- -->
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+					<p class="titulo-label1">distrito federal
+					</p>	
+				</div>
+				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
+				</a>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda1.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En boutique
+				</p>
+				<p class="publicado-por">
+					Publicado por: Renata Villaseñor
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-condesa
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda2.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2300
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En plaza comercial
+				</p>
+				<p class="publicado-por">
+					Publicado por: Alejandro Jiménez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-polanco
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda3.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$3000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En galería
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jaime Martínez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda4.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2500
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En espacio de arte
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jimena Pardo
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- -------------------------TIENDAS RENGLON -------------------- -->
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+					<p class="titulo-label1">monterrey
+					</p>	
+				</div>
+				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
+				</a>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda1.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En boutique
+				</p>
+				<p class="publicado-por">
+					Publicado por: Renata Villaseñor
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-condesa
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda2.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2300
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En plaza comercial
+				</p>
+				<p class="publicado-por">
+					Publicado por: Alejandro Jiménez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-polanco
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda3.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$3000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En galería
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jaime Martínez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda4.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2500
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En espacio de arte
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jimena Pardo
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- -------------------------TIENDAS RENGLON -------------------- -->
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+					<p class="titulo-label1">guadalajara
+					</p>	
+				</div>
+				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
+				</a>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda1.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En boutique
+				</p>
+				<p class="publicado-por">
+					Publicado por: Renata Villaseñor
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-condesa
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda2.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2300
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En plaza comercial
+				</p>
+				<p class="publicado-por">
+					Publicado por: Alejandro Jiménez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-polanco
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda3.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$3000
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En galería
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jaime Martínez
+				</p>
+			</div>
+
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							espacio
+						</p>
+						<p class="texto-verde">
+							-roma
+						</p>
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star-bad"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="img/tiendas/tienda4.jpg"></img>
+						</figure>
+						<figure>
+							<img class="triang-pleca" src="img/tiendas/trianguloprecios.png"></img>
+						</figure>
+						<p class="precio-label">
+							$2500
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					En espacio de arte
+				</p>
+				<p class="publicado-por">
+					Publicado por: Jimena Pardo
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- ---------------------------------TOP-UP---------------------- -->
+	<section id="top-up-section">
+		<figure>
+			<img class="marquesina" src="img/marquesina.png"></img>
+		</figure>
+		<div class="labels-cont">
+			<p class="titulo-label1">el top-
+			</p>
+			<p class="titulo-label2">up</p>
+		</div>
+		<div class="top-up-mosaico">
+			<div class="col1">
+				<a href="#">
+					<figure>
+						<img class="lo-trendy" src="img/trendy.jpg"></img>
+					</figure>
+				</a>
+			</div>
+			<div class="col2">
+				<a class="lo-tradicional-link" href="#">
+					<figure>
+						<img class="lo-tradicional-img" src="img/tradicional.jpg"></img>
+					</figure>
+				</a>
+				<a class="lo-deportivo-link" href="#">
+					<figure>
+						<img class="lo-deportivo-img" src="img/deportivo.jpg"></img>
+					</figure>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ----------------------------FONDO FINAL---------------------- -->
+	<section id="fondo-final">
+		<figure>
+			<img class="fondo-img" src="img/fondofinaldelapagina.jpg"></img>
+		</figure>
+	</section>
+
+	<!-- ---------------------------------FOOTER---------------------- -->
+	<footer>
+		<div class="piplusone-logos">
+			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">
+				<div class="iconos">
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="img/pi.png"></img>
+					</figure>
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="img/plus.png"></img>
+					</figure>
+					<figure class="icono-fig-item">
+						<img class="icono-img-item" src="img/one.png"></img>
+					</figure>
+				</div>
+			</a>
+		</div>
+		<div class="powered-label">Powered by 
+			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">PI.PLUS.ONE</a>
+		</div>
+	</footer>
+</body>
+
+</html>
