@@ -1,22 +1,37 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from rent_types.models import Rent_Type
-
-from status_types.models import Status_Type
-
-from stores.models import Store, Contact
+from stores.models import Store
 
 
-class Store_Request(models.Model):
+class RentType(models.Model):
+    name_type = models.CharField(max_length=255)
+
+    # menos de 7 dias --> renta por dia
+    # en medio:: --> renta semanal
+    # mas de 30 dias --> renta mensual
+    def __unicode__(self):
+        return self.name_type
+
+
+class StatusType(models.Model):
+    status_name = models.CharField(max_length=11)
+
+    def __unicode__(self):
+        return self.status_name
+
+
+class StoreRequest(models.Model):
+
     request_code = models.CharField(max_length=6)
     store = models.ForeignKey(Store)
-    username = models.ForeignKey(User)
-    contact = models.ForeignKey(Contact)
+    user = models.ForeignKey(User)
+    # contact = models.ForeignKey(Contact)
     date_created = models.DateTimeField(auto_now_add=True)
-    rent_type = models.ForeignKey(Rent_Type)
+    rent_type = models.ForeignKey(RentType)
     rent_price = models.FloatField(null=True, blank=True, default=0)
-    status_req = models.ForeignKey(Status_Type)
+    status_req = models.ForeignKey(StatusType)  # default 'nueva'
+    # Dos input --> jquery ui --> widget calendario
     start_date = models.DateField()
     ending_date = models.DateField()
 
