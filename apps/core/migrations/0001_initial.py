@@ -45,6 +45,16 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
+            name='Neighborhood',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=64)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='PostalCode',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -73,6 +83,7 @@ class Migration(migrations.Migration):
                 ('city', models.ForeignKey(to='core.City')),
             ],
             options={
+                'ordering': ['town_name'],
             },
             bases=(models.Model,),
         ),
@@ -83,15 +94,15 @@ class Migration(migrations.Migration):
             preserve_default=True,
         ),
         migrations.AddField(
-            model_name='city',
-            name='state',
-            field=models.ForeignKey(to='core.State'),
+            model_name='neighborhood',
+            name='postal_code',
+            field=models.ForeignKey(to='core.PostalCode'),
             preserve_default=True,
         ),
         migrations.AddField(
-            model_name='address',
-            name='postal_code',
-            field=models.ForeignKey(to='core.PostalCode'),
+            model_name='city',
+            name='state',
+            field=models.ForeignKey(to='core.State'),
             preserve_default=True,
         ),
     ]

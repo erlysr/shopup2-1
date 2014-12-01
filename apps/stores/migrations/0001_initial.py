@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
     dependencies = [
         ('tabulators', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('status_types', '0001_initial'),
         ('core', '0001_initial'),
     ]
 
@@ -27,6 +26,16 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Contacto',
                 'verbose_name_plural': 'Contactos',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='StatusType',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('status_name', models.CharField(max_length=11)),
+            ],
+            options={
             },
             bases=(models.Model,),
         ),
@@ -72,7 +81,7 @@ class Migration(migrations.Migration):
                 ('price', models.FloatField(null=True, blank=True)),
                 ('address', models.ForeignKey(to='core.Address', blank=True)),
                 ('contact', models.ForeignKey(to='stores.Contact')),
-                ('status', models.ForeignKey(to='status_types.Status_Type')),
+                ('status', models.ForeignKey(to='stores.StatusType')),
                 ('tabulator', models.ForeignKey(to='tabulators.Tabulator')),
                 ('username', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],

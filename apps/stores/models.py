@@ -4,7 +4,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from core.models import Address
-from status_types.models import Status_Type
 from tabulators.models import Tabulator
 
 
@@ -23,12 +22,19 @@ class Contact(models.Model):
         return self.firstname
 
 
+class StatusType(models.Model):
+    status_name = models.CharField(max_length=11)
+
+    def __unicode__(self):
+        return self.status_name
+
+
 class Store(models.Model):
 
-    username = models.ForeignKey(User)
+    user = models.ForeignKey(User, blank=True, null=True)
 
     # 1ra Forma:: Registro de tienda
-    contact = models.ForeignKey(Contact)
+    contact = models.ForeignKey(Contact, blank=True, null=True)
 
     # 2da Forma:: Registro de tienda
     store_name = models.CharField(max_length=255)
@@ -39,24 +45,22 @@ class Store(models.Model):
     # Funciones Ajax:: A partir de un estado, desplegar
     # Delegaciones o Municipios, Luego apartir de la delegacion
     # cargar los codigos postales correspondientes.
-    address = models.ForeignKey(Address, blank=True)
+    address = models.ForeignKey(Address, blank=True, null=True)
 
-    image1 = models.ImageField(upload_to='stores')
+    # 3ra Forma
+    website = models.CharField(max_length=255, blank=True)
+    facebook = models.CharField(max_length=255, blank=True)
+    twitter = models.CharField(max_length=255, blank=True)
+    youtube = models.CharField(max_length=255, blank=True)
+
+    # Las imagenes des pues del registro
+    image1 = models.ImageField(upload_to='stores')  # logotipo ?
     image2 = models.ImageField(upload_to='stores', blank=True)
     image3 = models.ImageField(upload_to='stores', blank=True)
     image4 = models.ImageField(upload_to='stores', blank=True)
     image5 = models.ImageField(upload_to='stores', blank=True)
 
-    website = models.CharField(max_length=255, blank=True)
-    facebook = models.CharField(max_length=255, blank=True)
-    twitter = models.CharField(max_length=255, blank=True)
-    youtube = models.CharField(max_length=255, blank=True)
-    comments = models.TextField(blank=True)
-    tabulator = models.ForeignKey(Tabulator)
-    status = models.ForeignKey(Status_Type)
-    date_created = models.DateField(null=True, blank=True)
-    date_approved = models.DateField(null=True, blank=True)
-
+    # 4ta Forma
     wireless = models.BooleanField(default=False)
     stands = models.BooleanField(default=False)
     repisas = models.BooleanField(default=False)
@@ -64,18 +68,23 @@ class Store(models.Model):
     lighting = models.BooleanField(default=False)
     electricity = models.BooleanField(default=False)
     water = models.BooleanField(default=False)
+
     airconditioning = models.BooleanField(default=False)
     toilets = models.BooleanField(default=False)
     heating = models.BooleanField(default=False)
     elevator = models.BooleanField(default=False)
     parkinglot = models.BooleanField(default=False)
-    counter = models.BooleanField(default=False)
+    mostrador = models.BooleanField(default=False)
     phoneline = models.BooleanField(default=False)
     storehouse = models.BooleanField(default=False)
     dressingroom = models.BooleanField(default=False)
-    others1 = models.BooleanField(default=False)
-    others2 = models.BooleanField(default=False)
-    others3 = models.BooleanField(default=False)
+
+    comments = models.TextField(blank=True)
+    tabulator = models.ForeignKey(Tabulator, blank=True, null=True)
+    status = models.ForeignKey(StatusType, blank=True, null=True)
+    date_created = models.DateField(null=True, blank=True)
+    date_approved = models.DateField(null=True, blank=True)
+    counter = models.BooleanField(default=False)
 
     #Ojo: Faltan los campos para los lugares cercanos
 
@@ -88,8 +97,8 @@ class Store(models.Model):
     def __unicode__(self):
         return self.store_name
 
-    def precio_por_dia(self):
-        return self.tabulator.suggested_price
+    # def precio_por_dia(self):
+    #     return self.tabulator.suggested_price
 
     def precio_por_semana(self):
         precio_semana = (self.tabulator.suggested_price * 6) * .95
@@ -112,19 +121,20 @@ class Store(models.Model):
         return self.contact.email
 
     def direccion(self):
-        return """
-            <p>%s,</p>
-            <p>%s,</p>
-            <p>%s,</p>
-            <p>%s,</p>
-            <p>%s,</p>
-            """ % (
-            self.address,
-            self.address.neighborhood,
-            self.address.postal_code,
-            self.address.postal_code.town,
-            self.address.postal_code.town.city
-        )
+        return u'direccion'
+        # return """
+        #     <p>%s,</p>
+        #     <p>%s,</p>
+        #     <p>%s,</p>
+        #     <p>%s,</p>
+        #     <p>%s,</p>
+        #     """ % (
+        #     self.address,
+        #     self.address.neighborhood,
+        #     self.address.postal_code,
+        #     self.address.postal_code.town,
+        #     self.address.postal_code.town.city
+        # )
 
     def verificacion(self):
         return self.status

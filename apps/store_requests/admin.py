@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Store_Request
+from .models import StoreRequest
 
 
-class Store_RequestAdmin(admin.ModelAdmin):
+class StoreRequestAdmin(admin.ModelAdmin):
     #Checar como cambiar las etiquetas a espanol para que acepte acentos
     list_display = (
         'Contacto',
@@ -29,4 +29,4 @@ class Store_RequestAdmin(admin.ModelAdmin):
 
     # Register your models here.
 
-admin.site.register(Store_Request, Store_RequestAdmin)
+admin.site.register(StoreRequest, StoreRequestAdmin)

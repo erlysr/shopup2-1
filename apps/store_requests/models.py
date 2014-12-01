@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from stores.models import Store
+from stores.models import Store, StatusType
 
 
 class RentType(models.Model):
@@ -12,13 +12,6 @@ class RentType(models.Model):
     # mas de 30 dias --> renta mensual
     def __unicode__(self):
         return self.name_type
-
-
-class StatusType(models.Model):
-    status_name = models.CharField(max_length=11)
-
-    def __unicode__(self):
-        return self.status_name
 
 
 class StoreRequest(models.Model):

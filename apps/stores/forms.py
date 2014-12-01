@@ -60,9 +60,11 @@ class RegStoreStepTwoForm(forms.ModelForm):
     class Meta:
         model = Store
         fields = (
-            'contact', 'store_name', 'dimentions', 'activity', 'store_phone')
+            'user', 'contact', 'store_name', 'dimentions', 'activity',
+            'store_phone'
+        )
 
-    def __init__(self, contact, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = 'register-store'
         self.helper.form_method = 'post'
@@ -73,34 +75,33 @@ class RegStoreStepTwoForm(forms.ModelForm):
         self.helper.layout = Layout(
             Fieldset(
                 'Paso 2',
-                # list(self.fields)
+                Field('user', type='hidden'),
                 Field('contact', type='hidden'),
-                'store_name', 'dimentions', 'activity', 'store_phone',
-                'delegacion_municipio', 'codigo_postal'
+                'store_name', 'dimentions', 'activity',
+                'store_phone', 'delegacion_municipio', 'codigo_postal'
             ),
             FormActions(Submit('save', 'save'))
         )
         super(RegStoreStepTwoForm, self).__init__(*args, **kwargs)
-        self.fields['contact'].initial = contact.id
         DELEGACIONES = delegaciones_municipios(Town.objects.all())
+        self.fields['contact'].required = False
         self.fields['delegacion_municipio'] = forms.ChoiceField(
             choices=DELEGACIONES)
         self.fields['codigo_postal'] = Dropdown(PostalCode.objects.all())
 
 
 class RegStoreStepThreeForm(forms.ModelForm):
-
-    # estado = forms.IntegerField()
-    # ciudad = forms.IntegerField()
-    delegacion_municipio = forms.IntegerField()
-    codigo_postal = forms.IntegerField()
-
+    """
+    Este paso no me parece importante
+    """
     class Meta:
         model = Store
         fields = (
-            'contact', 'store_name', 'dimentions', 'activity', 'store_phone')
+            'website', 'facebook', 'twitter', 'youtube'
+        )
 
-    def __init__(self, contact, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
+        super(RegStoreStepThreeForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'register-store'
         self.helper.form_method = 'post'
@@ -110,17 +111,51 @@ class RegStoreStepThreeForm(forms.ModelForm):
         self.helper.field_class = 'col-lg-10'
         self.helper.layout = Layout(
             Fieldset(
-                'Paso 2',
+                'Paso 3',
+                # for k, v in self.fields.iteritems():
+                #     print "'%s'," % k
                 # list(self.fields)
-                Field('contact', type='hidden'),
-                'store_name', 'dimentions', 'activity', 'store_phone',
-                'delegacion_municipio', 'codigo_postal'
+                'website', 'facebook', 'twitter', 'youtube',
             ),
             FormActions(Submit('save', 'save'))
         )
-        super(RegStoreStepTwoForm, self).__init__(*args, **kwargs)
-        self.fields['contact'].initial = contact.id
-        DELEGACIONES = delegaciones_municipios(Town.objects.all())
-        self.fields['delegacion_municipio'] = forms.ChoiceField(
-            choices=DELEGACIONES)
-        self.fields['codigo_postal'] = Dropdown(PostalCode.objects.all())
+
+
+class RegStoreStepFourForm(forms.ModelForm):
+    """
+    Este paso no me parece importante
+    """
+    class Meta:
+        model = Store
+        fields = (
+            'wireless', 'stands', 'repisas', 'boards',
+            'lighting', 'electricity', 'water',
+            'airconditioning', 'toilets', 'heating',
+            'elevator', 'parkinglot', 'mostrador',
+            'phoneline', 'storehouse', 'dressingroom'
+        )
+
+    def __init__(self, *args, **kwargs):
+        super(RegStoreStepFourForm, self).__init__(*args, **kwargs)
+        # cad = ''
+        # for k, v in self.fields.iteritems():
+        #     cad += "'%s'," % k
+        self.helper = FormHelper()
+        self.helper.form_id = 'register-store'
+        self.helper.form_method = 'post'
+        self.helper.form_action = ''
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-lg-2'
+        self.helper.field_class = 'col-lg-10'
+        self.helper.layout = Layout(
+            Fieldset(
+                'Paso 4',
+                # list(self.fields)
+                'wireless', 'stands', 'repisas', 'boards',
+                'lighting', 'electricity', 'water',
+                'airconditioning', 'toilets', 'heating',
+                'elevator', 'parkinglot', 'mostrador',
+                'phoneline', 'storehouse', 'dressingroom'
+            ),
+            FormActions(Submit('save', 'save'))
+        )

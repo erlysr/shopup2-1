@@ -2,19 +2,29 @@
 
 from django.conf.urls import patterns, url
 
-from . views import RegStoreStepOneView, RegStoreStepTwoView
+from . import views
 
 
 urlpatterns = patterns(
     '',
     url(
         r'^reg/step/one/$',
-        RegStoreStepOneView.as_view(),
+        views.RegStoreStepOneView.as_view(),
         name='reg-store-1'
     ),
     url(
-        r'^reg/step/two/(?P<pk>\d+)/$',
-        RegStoreStepTwoView.as_view(),
+        r'^reg/step/two/$',
+        views.RegStoreStepTwoView.as_view(),
         name='reg-store-2'
+    ),
+    url(
+        r'^reg/step/three/$',
+        views.RegStoreStepThreeView.as_view(),
+        name='reg-store-3'
+    ),
+    url(
+        r'^reg/step/four/$',
+        views.RegStoreStepFourView.as_view(),
+        name='reg-store-4'
     ),
 )
