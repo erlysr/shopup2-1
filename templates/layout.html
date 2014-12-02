@@ -29,7 +29,7 @@
             <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
         </figure>
         {% if user.is_authenticated %}
-            <p class="nombre-usuario">Bienvenido: {{request.user}}</p>
+            <p class="nombre-usuario">Bienvenido: {{user.username}}</p>
             <a class="salir-link" href="logout.html">Salir</a>
         {% else %}
             <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
