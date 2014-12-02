@@ -30,7 +30,7 @@
         </figure>
         {% if user.is_authenticated %}
             <p class="nombre-usuario">Bienvenido: {{user.first_name}}</p>
-            <a class="salir-link" href="logout.html">Salir</a>
+            <a class="salir-link" href="{% url 'userprofiles:logout' %}">Salir</a>
         {% else %}
             <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
         {% endif %}
@@ -58,15 +58,9 @@
             <li>
                 <a href="{% url 'storerequest:store-request' %}" class="btn btn-primary">Enviar Solicitud</a>
             </li>
-            <li>
-                <a class="btn btn-primary" href="{% url 'userprofiles:logout' %}">Logout</a>
-            </li>
             {% else %}
             <li>
-                <a class="btn btn-primary" href="{% url 'userprofiles:signup' %}/">Sigup</a>
-            </li>
-            <li>
-                <a class="btn btn-primary" href="{% url 'userprofiles:signin' %}">Sigin</a>
+                <a class="btn btn-primary" href="{% url 'userprofiles:signup' %}/">Registrarse</a>
             </li>
             {% endif %}
 
