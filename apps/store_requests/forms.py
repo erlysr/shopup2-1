@@ -49,7 +49,8 @@ class StoreRequestForm(forms.ModelForm):
             ),
             FormActions(Submit('Save', 'save'))
         )
-        self.fields['store'] = DropDown(Store.objects.all())
+        self.fields['store'] = DropDown(
+            Store.objects.filter(status__name='Aprobada'))
         self.fields['user'].initial = user.id
         self.fields['rent_type'] = DropDown(RentType.objects.all())
         self.fields['status_type'] = DropDown(StatusType.objects.all())

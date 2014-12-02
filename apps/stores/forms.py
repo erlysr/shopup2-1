@@ -119,7 +119,7 @@ class RegStoreStepThreeForm(forms.ModelForm):
                 'elevator', 'parkinglot', 'mostrador',
                 'phoneline', 'storehouse', 'dressingroom'
             ),
-            FormActions(Submit('save', 'save'))
+            FormActions(Submit('save', 'Siguiente'))
         )
         super(RegStoreStepThreeForm, self).__init__(*args, **kwargs)
 
