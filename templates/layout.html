@@ -29,7 +29,7 @@
             <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
         </figure>
         {% if user.is_authenticated %}
-            <p class="nombre-usuario">Bienvenido: {{user.username}}</p>
+            <p class="nombre-usuario">Bienvenido: {{user.firts_name}}</p>
             <a class="salir-link" href="logout.html">Salir</a>
         {% else %}
             <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
@@ -46,25 +46,9 @@
 
     <div class="container">
         <nav class="navbar navbar-default">
+
             <li>
                 <a class="btn btn-primary" href="{% url 'core:home' %}">Inicio</a>
-            </li>
-
-            {% if user.is_authenticated %}
-            <li>
-                <a class="btn btn-primary" href="{% url 'userprofiles:signup' %}/">Sigup</a>
-            </li>
-            <li>
-                <a class="btn btn-primary" href="{% url 'userprofiles:logout' %}">Logout</a>
-            </li>
-            {% else %}
-            <li>
-                <a class="btn btn-primary" href="{% url 'userprofiles:signin' %}">Sigin</a>
-            </li>
-            {% endif %}
-
-            <li>
-                <a class="btn btn-primary" href="/profile/">Profile</a>
             </li>
 
             {% if user.is_authenticated %}
@@ -74,7 +58,19 @@
             <li>
                 <a href="{% url 'storerequest:store-request' %}" class="btn btn-primary">Enviar Solicitud</a>
             </li>
+            <li>
+                <a class="btn btn-primary" href="{% url 'userprofiles:logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a class="btn btn-primary" href="{% url 'userprofiles:signup' %}/">Sigup</a>
+            </li>
+            <li>
+                <a class="btn btn-primary" href="{% url 'userprofiles:signin' %}">Sigin</a>
+            </li>
             {% endif %}
+
+
         </nav>
     </div>
 
