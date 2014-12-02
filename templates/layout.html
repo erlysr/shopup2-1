@@ -44,6 +44,29 @@
         </ul>
     </header>
 
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <li>
+                <a class="btn btn-primary" href="{% url 'core:home' %}">Inicio</a>
+            </li>
+            <li>
+                <a class="btn btn-primary" href="{% url 'userprofiles:logout' %}">Logout</a>
+            </li>
+            <li>
+                <a class="btn btn-primary" href="{% url 'userprofiles:signin' %}">Sigin</a>
+            </li>
+            <li>
+                <a class="btn btn-primary" href="/profile/">Profile</a>
+            </li>
+            <li>
+                <a href="{% url 'stores:reg-store-1' %}" class="btn btn-primary">Reg Store</a>
+            </li>
+            <li>
+                <a href="{% url 'stores:reg-store-1' %}" class="btn btn-primary">Reg Store Request</a>
+            </li>
+        </nav>
+    </div>
+
     <section style="margin: 3em 0 3em 0; height: 460px;">
         {% block content %}
         {% endblock content %}
