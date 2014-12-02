@@ -114,7 +114,7 @@ class LoginView(FormView):
 
     form_class = forms.EmailAuthenticationForm
     template_name = 'login.html'
-    success_url = '/profile/'
+    success_url = '/'
 
     def form_valid(self, form):
         #email = form.cleaned_data['email']
