@@ -28,11 +28,11 @@
         <figure>
             <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
         </figure>
-        {% if request.user.is_authenticated %}
-        <p class="nombre-usuario">Bienvenido: {{request.user}}</p>
-        <a class="salir-link" href="logout.html">Salir</a>
+        {% if user.is_authenticated %}
+            <p class="nombre-usuario">Bienvenido: {{request.user}}</p>
+            <a class="salir-link" href="logout.html">Salir</a>
         {% else %}
-        <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
+            <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
         {% endif %}
         <ul class="menu-superior">
             <li class="registra-tienda-opcion">
@@ -49,14 +49,14 @@
             <li>
                 <a class="btn btn-primary" href="{% url 'core:home' %}">Inicio</a>
             </li>
-            {% if request.user.is_authenticated %}
             <li>
                 <a class="btn btn-primary" href="{% url 'userprofiles:signin' %}">Sigin</a>
             </li>
-            {% endif %}
+            {% if request.user.is_authenticated %}
             <li>
                 <a class="btn btn-primary" href="{% url 'userprofiles:signup' %}/">Sigup</a>
             </li>
+            {% endif %}
             <li>
                 <a class="btn btn-primary" href="{% url 'userprofiles:logout' %}">Logout</a>
             </li>
