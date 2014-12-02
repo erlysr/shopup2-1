@@ -50,7 +50,7 @@
                 <a class="btn btn-primary" href="{% url 'core:home' %}">Inicio</a>
             </li>
 
-            {% if request.user.is_authenticated %}
+            {% if user.is_authenticated %}
             <li>
                 <a class="btn btn-primary" href="{% url 'userprofiles:signup' %}/">Sigup</a>
             </li>
@@ -66,12 +66,13 @@
             <li>
                 <a class="btn btn-primary" href="/profile/">Profile</a>
             </li>
-            {% if request.user.is_authenticated %}
+
+            {% if user.is_authenticated %}
             <li>
-                <a href="{% url 'stores:reg-store-1' %}" class="btn btn-primary">Reg Store</a>
+                <a href="{% url 'stores:reg-store-1' %}" class="btn btn-primary">Registrar Tienda</a>
             </li>
             <li>
-                <a href="{% url 'storerequest:store-request' %}" class="btn btn-primary">Reg Store Request</a>
+                <a href="{% url 'storerequest:store-request' %}" class="btn btn-primary">Enviar Solicitud</a>
             </li>
             {% endif %}
         </nav>
