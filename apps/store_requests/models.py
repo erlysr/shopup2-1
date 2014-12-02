@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -16,20 +18,22 @@ class RentType(models.Model):
 
 class StoreRequest(models.Model):
 
-    request_code = models.CharField(max_length=6)
+    created = models.DateTimeField(auto_now_add=True)
     store = models.ForeignKey(Store)
     user = models.ForeignKey(User)
-    # contact = models.ForeignKey(Contact)
-    date_created = models.DateTimeField(auto_now_add=True)
     rent_type = models.ForeignKey(RentType)
     rent_price = models.FloatField(null=True, blank=True, default=0)
-    status_req = models.ForeignKey(StatusType)  # default 'nueva'
+    status_type = models.ForeignKey(StatusType)  # default 'nueva'
     # Dos input --> jquery ui --> widget calendario
     start_date = models.DateField()
     ending_date = models.DateField()
 
+    class Meta:
+        verbose_name = 'Petición de Tienda'
+        verbose_name_plural = 'Peticiones de Tiendas'
+
     def __unicode__(self):
-        return self.request_code
+        return self.id
 
     def Contacto(this):
         return this.contact.firstname

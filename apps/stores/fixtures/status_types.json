@@ -1,0 +1,9 @@
+[
+{
+    "fields": {
+        "name": "Nueva"
+    },
+    "model": "stores.statustype",
+    "pk": 1
+}
+]

@@ -2,7 +2,14 @@ from django.contrib import admin
 
 from store_requests.models import StoreRequest
 
-from . models import Store, Contact
+from . models import Store, Contact, StatusType
+
+
+class StatusTypeAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'name',
+    )
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -41,5 +48,6 @@ class StoreAdmin(admin.ModelAdmin):
     # inlines = [Store_RequestInLine, ]
     # change_list_template = "admin/change_list_filter_sidebar.html"
 
+admin.site.register(StatusType, StatusTypeAdmin)
 admin.site.register(Store, StoreAdmin)
 admin.site.register(Contact, ContactAdmin)

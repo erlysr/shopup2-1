@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="col-md-8" style="margin-top: 3em;">
+    {% crispy form %}
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+{% endblock extra_js %}

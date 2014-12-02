@@ -18,6 +18,7 @@ urlpatterns = patterns(
     (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^stores/', include('stores.urls', namespace='stores')),
+    url(r'^request', include('store_requests.urls', namespace='storerequest')),
     url(r'^core/', include('core.urls', namespace='core')),
 
     # urls directas

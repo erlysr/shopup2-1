@@ -23,10 +23,11 @@ class Contact(models.Model):
 
 
 class StatusType(models.Model):
-    status_name = models.CharField(max_length=11)
+
+    name = models.CharField(max_length=11)
 
     def __unicode__(self):
-        return self.status_name
+        return self.name
 
 
 class Store(models.Model):

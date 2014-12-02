@@ -1,0 +1,23 @@
+[
+{
+    "fields": {
+        "name_type": "Por D\u00eda"
+    },
+    "model": "store_requests.renttype",
+    "pk": 1
+},
+{
+    "fields": {
+        "name_type": "Semanal"
+    },
+    "model": "store_requests.renttype",
+    "pk": 2
+},
+{
+    "fields": {
+        "name_type": "Mensual"
+    },
+    "model": "store_requests.renttype",
+    "pk": 3
+}
+]

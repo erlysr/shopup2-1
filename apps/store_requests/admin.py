@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import StoreRequest
+from .models import RentType, StoreRequest
+
+
+class RentTypeAdmin(admin.ModelAdmin):
+
+    list_display = ['name_type']
 
 
 class StoreRequestAdmin(admin.ModelAdmin):
@@ -13,9 +18,9 @@ class StoreRequestAdmin(admin.ModelAdmin):
         'Fecha_Inicio',
         'Fecha_Termino',
         'Precio',
-        'status_req'
+        'status_type'
     )
-    ordering = ('-status_req', )
+    ordering = ('-status_type', )
     # list_filter = ('store_name', 'status')
     # search_fields = (
     #     'store_name',
@@ -23,10 +28,11 @@ class StoreRequestAdmin(admin.ModelAdmin):
     #     'address__address_line1',
     #     'address__neighborhood'
     # )
-    list_editable = ('status_req', )
+    list_editable = ('status_type', )
     # inlines = [Store_RequestInLine, ]
     # change_list_template = "admin/change_list_filter_sidebar.html"
 
     # Register your models here.
 
+admin.site.register(RentType, RentTypeAdmin)
 admin.site.register(StoreRequest, StoreRequestAdmin)
