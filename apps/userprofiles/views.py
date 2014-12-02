@@ -69,7 +69,7 @@ def signup(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect('/signin/')
+    return HttpResponseRedirect('/')
 
 
 class ProfileView(TemplateView):
