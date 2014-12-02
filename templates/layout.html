@@ -1,24 +1,75 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock title %} - Shopup</title>
+    <meta charset="utf-8">
+    <meta description="Shop-up, renta tu espacio">
+    <title>{% block title %}{% endblock title %} - Shop-up, renta tu espacio</title>
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
-    {% block extra_css %}
-    {% endblock extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos-shop-up.css' %}">
 </head>
-
 <body>
+    <header id="encabezado">
+        <figure>
+            <img class="logo-shop-up" src="{% static 'img/logo_1.png' %}"></img>
+        </figure>
+        <div class="redes-iconos">
+            <a href="http://www.facebook.com/ShopUpMexico" target="_blank">
+                <figure>
+                    <img class="icono" src="{% static 'img/fb.jpg' %}"></img>
+                </figure>
+            </a>
+            <a href="http://www.twitter.com/ShopUpMx" target="_blank">
+                <figure>
+                    <img class="icono" src="{% static 'img/twitter.jpg' %}"></img>
+                </figure>
+            </a>
+        </div>
+        <figure>
+            <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
+        </figure>
+        {% if is_auth %}
+        <p class="nombre-usuario">Bienvenido: {{ name }}</p>
+        <a class="salir-link" href="logout.html">Salir</a>
+        {% else %}
+        <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
+        {% endif %}
+        <ul class="menu-superior">
+            <li class="registra-tienda-opcion">
+                <a class="registra-tienda-link" href="{% url 'stores:reg-store-1' %}">Registrar mi tienda</a>
+            </li>
+            <li>
+                <a class="contacto-opcion" href="#">Contacto</a>
+            </li>
+        </ul>
+    </header>
 
-    <div class="container">
+    <section style="margin: 3em 0 3em 0; height: 460px;">
         {% block content %}
         {% endblock content %}
-    </div>
+    </section>
 
-    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
-    {% block extra_js %}
-    {% endblock extra_js %}
+
+    <footer>
+        <div class="piplusone-logos">
+            <a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">
+                <div class="iconos">
+                    <figure class="icono-fig-item">
+                        <img class="icono-img-item" src="{% static 'img/pi.png' %}"></img>
+                    </figure>
+                    <figure class="icono-fig-item">
+                        <img class="icono-img-item" src="{% static 'img/plus.png' %}"></img>
+                    </figure>
+                    <figure class="icono-fig-item">
+                        <img class="icono-img-item" src="{% static 'img/one.png' %}"></img>
+                    </figure>
+                </div>
+            </a>
+        </div>
+        <div class="powered-label">Powered by
+            <a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">PI.PLUS.ONE</a>
+        </div>
+    </footer>
 </body>
+
 </html>

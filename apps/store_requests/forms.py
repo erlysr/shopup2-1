@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
-from django.contrib.auth.models import User
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, Submit
+from crispy_forms.layout import Layout, Fieldset, Field, Submit
 from crispy_forms.bootstrap import FormActions
 
 from stores.models import StatusType, Store
@@ -30,7 +29,8 @@ class StoreRequestForm(forms.ModelForm):
             'ending_date'
         )
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, user, *args, **kwargs):
+        super(StoreRequestForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.form_action = ''
@@ -41,7 +41,7 @@ class StoreRequestForm(forms.ModelForm):
             Fieldset(
                 'Nueva Petición de Tienda',
                 'store',
-                'user',
+                Field('user', type='hidden'),
                 'rent_type',
                 'status_type',
                 'start_date',
@@ -49,8 +49,7 @@ class StoreRequestForm(forms.ModelForm):
             ),
             FormActions(Submit('Save', 'save'))
         )
-        super(StoreRequestForm, self).__init__(*args, **kwargs)
         self.fields['store'] = DropDown(Store.objects.all())
-        self.fields['user'] = DropDown(User.objects.all())
+        self.fields['user'].initial = user.id
         self.fields['rent_type'] = DropDown(RentType.objects.all())
         self.fields['status_type'] = DropDown(StatusType.objects.all())

@@ -1,13 +1,10 @@
 from django.contrib.auth import login, authenticate, logout
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.views.generic import (
-    TemplateView, FormView, RedirectView, CreateView)
+from django.views.generic import TemplateView, FormView, RedirectView
 
-from . forms import (
-    UserCreationEmailForm, EmailAuthenticationForm, LoginForm,
-    ProfileForm)
+from . import forms
 from . models import UserProfile
 
 
@@ -16,7 +13,7 @@ class RegisterProfile(FormView):
     Vista de registro tradicional de usuario (form)
     """
     template_name = 'signup.html'
-    form_class = ProfileForm
+    form_class = forms.ProfileForm
 
     def form_invalid(self, form):
         print '#' * 10, 'invalido'
@@ -40,13 +37,13 @@ class RegisterProfile(FormView):
             calification=calificacion
         )
         profile.save()
-        usuario = authenticate(email=user.email, password=password)
+        usuario = authenticate(username=user.email, password=password)
         login(self.request, usuario)
         return redirect('/')
 
 
 def signup(request):
-    form = UserCreationEmailForm(request.POST or None)
+    form = forms.UserCreationEmailForm(request.POST or None)
 
     if form.is_valid():
         form.save()
@@ -58,23 +55,21 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 
-def signin(request):
-    form = EmailAuthenticationForm(request.POST or None)
+# def signin(request):
+#     form = EmailAuthenticationForm(request.POST or None)
 
-    if form.is_valid():
-        #loguear
-        login(request, form.get_user())
+#     if form.is_valid():
+#         #loguear
+#         login(request, form.get_user())
 
-        #redireccionar al home
+#         #redireccionar al home
 
-    return render(request, 'signin.html', {'form': form})
+#     return render(request, 'signin.html', {'form': form})
 
 
 def logout_view(request):
     logout(request)
-
-    #Redireccionar al login page
-    return HttpResponseRedirect('/login/')
+    return HttpResponseRedirect('/signin/')
 
 
 class ProfileView(TemplateView):
@@ -116,7 +111,8 @@ class ProfileView(TemplateView):
 
 
 class LoginView(FormView):
-    form_class = EmailAuthenticationForm
+
+    form_class = forms.EmailAuthenticationForm
     template_name = 'login.html'
     success_url = '/profile/'
 
@@ -125,9 +121,7 @@ class LoginView(FormView):
         #password = form.cleaned_data['password']
         #user = authenticate(email=email, password=password)
         #falta validar si el usuario tiene userprofile o si no hay sesion
-
         login(self.request, form.user_cache)
-
         admin = form.user_cache.is_superuser
         if admin:
             self.success_url = '/admin/'

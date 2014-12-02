@@ -33,31 +33,25 @@ class StoreRequest(models.Model):
         verbose_name_plural = 'Peticiones de Tiendas'
 
     def __unicode__(self):
-        return self.id
+        return self.store.__unicode__(), self.user.__unicode__()
 
-    def Contacto(this):
-        return this.contact.firstname
+    # def Contacto(this):
+    #     return this.contact.firstname
 
-    def Telefono(this):
-        return this.contact.contact_phone
+    # def Giro(this):
+    #     return this.store.activity
 
-    def Email(this):
-        return this.contact.email
+    # def Renta(this):
+    #     return this.rent_type.name_type
 
-    def Giro(this):
-        return this.store.activity
+    # def Precio(this):
+    #     return this.rent_price
 
-    def Renta(this):
-        return this.rent_type.name_type
+    # def Status(this):
+    #     return this.status_req.status_name
 
-    def Precio(this):
-        return this.rent_price
+    # def Fecha_Inicio(this):
+    #     return this.start_date
 
-    def Status(this):
-        return this.status_req.status_name
-
-    def Fecha_Inicio(this):
-        return this.start_date
-
-    def Fecha_Termino(this):
-        return this.ending_date
+    # def Fecha_Termino(this):
+    #     return this.ending_date

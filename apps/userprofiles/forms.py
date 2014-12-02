@@ -57,7 +57,7 @@ class EmailAuthenticationForm(forms.Form):
         email = self.cleaned_data.get('email')
         password = self.cleaned_data.get('password')
 
-        self.user_cache = authenticate(email=email, password=password)
+        self.user_cache = authenticate(username=email, password=password)
 
         if self.user_cache is None:
             raise forms.ValidationError('Usuario incorrecto')

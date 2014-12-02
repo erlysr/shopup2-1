@@ -32,8 +32,6 @@ class RegStoreStepOneForm(forms.ModelForm):
         fields = ('firstname', 'lastname', 'email', 'contact_phone')
 
     def __init__(self, *args, **kwargs):
-        super(RegStoreStepOneForm, self).__init__(*args, **kwargs)
-
         self.helper = FormHelper()
         self.helper.form_id = 'form-contact'
         self.helper.form_method = 'post'
@@ -43,11 +41,11 @@ class RegStoreStepOneForm(forms.ModelForm):
         self.helper.field_class = 'col-lg-10'
         self.helper.layout = Layout(
             Fieldset(
-                # list(self.fields)
                 'Contacto', 'firstname', 'lastname', 'email', 'contact_phone'
             ),
-            FormActions(Submit('save', 'save'))
+            FormActions(Submit('save', 'Siguiente'))
         )
+        super(RegStoreStepOneForm, self).__init__(*args, **kwargs)
 
 
 class RegStoreStepTwoForm(forms.ModelForm):
@@ -80,7 +78,7 @@ class RegStoreStepTwoForm(forms.ModelForm):
                 'store_name', 'dimentions', 'activity',
                 'store_phone', 'delegacion_municipio', 'codigo_postal'
             ),
-            FormActions(Submit('save', 'save'))
+            FormActions(Submit('save', 'Siguiente'))
         )
         super(RegStoreStepTwoForm, self).__init__(*args, **kwargs)
         DELEGACIONES = delegaciones_municipios(Town.objects.all())
@@ -97,11 +95,14 @@ class RegStoreStepThreeForm(forms.ModelForm):
     class Meta:
         model = Store
         fields = (
-            'website', 'facebook', 'twitter', 'youtube'
+            'wireless', 'stands', 'repisas', 'boards',
+            'lighting', 'electricity', 'water',
+            'airconditioning', 'toilets', 'heating',
+            'elevator', 'parkinglot', 'mostrador',
+            'phoneline', 'storehouse', 'dressingroom'
         )
 
     def __init__(self, *args, **kwargs):
-        super(RegStoreStepThreeForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'register-store'
         self.helper.form_method = 'post'
@@ -112,13 +113,15 @@ class RegStoreStepThreeForm(forms.ModelForm):
         self.helper.layout = Layout(
             Fieldset(
                 'Paso 3',
-                # for k, v in self.fields.iteritems():
-                #     print "'%s'," % k
-                # list(self.fields)
-                'website', 'facebook', 'twitter', 'youtube',
+                'wireless', 'stands', 'repisas', 'boards',
+                'lighting', 'electricity', 'water',
+                'airconditioning', 'toilets', 'heating',
+                'elevator', 'parkinglot', 'mostrador',
+                'phoneline', 'storehouse', 'dressingroom'
             ),
             FormActions(Submit('save', 'save'))
         )
+        super(RegStoreStepThreeForm, self).__init__(*args, **kwargs)
 
 
 class RegStoreStepFourForm(forms.ModelForm):
@@ -128,18 +131,13 @@ class RegStoreStepFourForm(forms.ModelForm):
     class Meta:
         model = Store
         fields = (
-            'wireless', 'stands', 'repisas', 'boards',
-            'lighting', 'electricity', 'water',
-            'airconditioning', 'toilets', 'heating',
-            'elevator', 'parkinglot', 'mostrador',
-            'phoneline', 'storehouse', 'dressingroom'
+            'website', 'facebook', 'twitter', 'youtube',
+            'logo', 'image2', 'image3', 'image4', 'image5'
+
         )
 
     def __init__(self, *args, **kwargs):
         super(RegStoreStepFourForm, self).__init__(*args, **kwargs)
-        # cad = ''
-        # for k, v in self.fields.iteritems():
-        #     cad += "'%s'," % k
         self.helper = FormHelper()
         self.helper.form_id = 'register-store'
         self.helper.form_method = 'post'
@@ -150,12 +148,8 @@ class RegStoreStepFourForm(forms.ModelForm):
         self.helper.layout = Layout(
             Fieldset(
                 'Paso 4',
-                # list(self.fields)
-                'wireless', 'stands', 'repisas', 'boards',
-                'lighting', 'electricity', 'water',
-                'airconditioning', 'toilets', 'heating',
-                'elevator', 'parkinglot', 'mostrador',
-                'phoneline', 'storehouse', 'dressingroom'
+                'website', 'facebook', 'twitter', 'youtube',
+                'logo', 'image2', 'image3', 'image4', 'image5'
             ),
             FormActions(Submit('save', 'save'))
         )

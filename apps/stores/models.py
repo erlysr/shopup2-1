@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 from core.models import Address
 from tabulators.models import Tabulator
@@ -49,19 +49,6 @@ class Store(models.Model):
     address = models.ForeignKey(Address, blank=True, null=True)
 
     # 3ra Forma
-    website = models.CharField(max_length=255, blank=True)
-    facebook = models.CharField(max_length=255, blank=True)
-    twitter = models.CharField(max_length=255, blank=True)
-    youtube = models.CharField(max_length=255, blank=True)
-
-    # Las imagenes des pues del registro
-    image1 = models.ImageField(upload_to='stores')  # logotipo ?
-    image2 = models.ImageField(upload_to='stores', blank=True)
-    image3 = models.ImageField(upload_to='stores', blank=True)
-    image4 = models.ImageField(upload_to='stores', blank=True)
-    image5 = models.ImageField(upload_to='stores', blank=True)
-
-    # 4ta Forma
     wireless = models.BooleanField(default=False)
     stands = models.BooleanField(default=False)
     repisas = models.BooleanField(default=False)
@@ -79,6 +66,18 @@ class Store(models.Model):
     phoneline = models.BooleanField(default=False)
     storehouse = models.BooleanField(default=False)
     dressingroom = models.BooleanField(default=False)
+
+    # 4ta Forma
+    website = models.CharField(max_length=255, blank=True)
+    facebook = models.CharField(max_length=255, blank=True)
+    twitter = models.CharField(max_length=255, blank=True)
+    youtube = models.CharField(max_length=255, blank=True)
+
+    logo = models.ImageField(upload_to='stores')
+    image2 = models.ImageField(upload_to='stores', blank=True)
+    image3 = models.ImageField(upload_to='stores', blank=True)
+    image4 = models.ImageField(upload_to='stores', blank=True)
+    image5 = models.ImageField(upload_to='stores', blank=True)
 
     comments = models.TextField(blank=True)
     tabulator = models.ForeignKey(Tabulator, blank=True, null=True)
@@ -153,4 +152,4 @@ class Store(models.Model):
     contacto.admin_order_field = 'contact'
     verificacion.admin_order_field = 'status'
 
-    #Falta ordenar por solicitudes
+from . signals import delete_images

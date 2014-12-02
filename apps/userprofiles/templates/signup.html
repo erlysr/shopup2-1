@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Registro de Usuario</title>
-</head>
-<body>
-	<section>
-		<form enctype="multipart/form-data" action="" method="post">
-			{% csrf_token %}
-			{{form.as_p}}
-			<input type="submit" value="Registrar">
-		</form>
-	</section>
-</body>
-</html>
+{% extends "layout.html" %}
+
+
+{% block content %}
+	<form enctype="multipart/form-data" action="" method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Registrar">
+	</form>
+{% endblock content %}

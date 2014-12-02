@@ -1,5 +1,5 @@
-# from django.shortcuts import redirect
-from django.contrib.auth.models import User
+# -*- coding: utf-8 -*-
+
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import FormView, ListView, DetailView
@@ -58,15 +58,18 @@ class RegStoreStepFourView(FormView):
     success_url = '/'
 
     def form_valid(self, form):
-        user = User.objects.get(username='jrperdomoz')
         contact = RegStoreStepOneForm(self.request.session['fmr_one']).save()
         fmr_two = self.request.session['fmr_two']
         fmr_two[u'contact'] = contact
-        fmr_two[u'user'] = user
+        fmr_two[u'user'] = self.request.user
+        logo = form.cleaned_data['logo']
+
         fmr_three = self.request.session['fmr_three']
+
         data = dict(
             fmr_two.items() + fmr_three.items() + self.request.POST.items()
         )
+
         store = Store()
         store.user = data['user']
         store.contact = data['contact']
@@ -78,7 +81,15 @@ class RegStoreStepFourView(FormView):
         store.facebook = data['facebook']
         store.twitter = data['twitter']
         store.youtube = data['youtube']
-
+        store.logo = logo
+        if form.cleaned_data['image2']:
+            store.image2 = form.cleaned_data['image2']
+        if form.cleaned_data['image3']:
+            store.image3 = form.cleaned_data['image3']
+        if form.cleaned_data['image4']:
+            store.image4 = form.cleaned_data['image4']
+        if form.cleaned_data['image5']:
+            store.image5 = form.cleaned_data['image5']
         if 'wireless' in data:
             store.wireless = True
         if 'stands' in data:
@@ -115,6 +126,28 @@ class RegStoreStepFourView(FormView):
         return HttpResponseRedirect(self.get_success_url())
 
 # Listado de tiendas
+
+
+class StoresListView(ListView):
+
+    template_name = 'stores.html'
+    paginate_by = 20
+
+    def get_context_data(self, **kwargs):
+        context = super(StoresListView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Lista de Citas'
+        context['form'] = QueryListCita(self.request.GET or None)
+        context['fecha_final'] = self.get_fecha_final()
+        context['fecha_inicial'] = self.get_fecha_inicial()
+        context['id_miembro'] = self.get_id_miembro()
+        context['medico'] = self.get_medico()
+        context['query'] = self.get_query()
+        return context
+
+    def get_queryset(self):
+        queryset = Cita.objects.filter(
+            is_canceled=False, asistencia=False)
+        return self.pre_queryset(queryset)
 
 
 class StoreListView(ListView):

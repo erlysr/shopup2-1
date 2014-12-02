@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    <h1>Inicio</h1>
+
+    <ul>
+        {% for store in object_list %}
+            <li>{{store.store_name}}</li>
+            <li>{{store.contact}}</li>
+            <li>{{store.dimentions}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

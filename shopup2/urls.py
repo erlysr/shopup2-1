@@ -9,7 +9,8 @@ from stores.views import StoreListView, StoreDetailView
 from popular_topups.views import TopupListView
 
 from userprofiles.views import (
-    ProfileView, LoginView, PerfilRedirectView, RegisterProfile)
+    ProfileView, PerfilRedirectView
+)
 
 
 urlpatterns = patterns(
@@ -17,9 +18,10 @@ urlpatterns = patterns(
     # includes urls
     (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('core.urls', namespace='core')),
+    url(r'^', include('userprofiles.urls', namespace='userprofiles')),
     url(r'^stores/', include('stores.urls', namespace='stores')),
-    url(r'^request', include('store_requests.urls', namespace='storerequest')),
-    url(r'^core/', include('core.urls', namespace='core')),
+    url(r'^request/', include('store_requests.urls', namespace='storerequest')),
 
     # urls directas
     # url(
@@ -27,14 +29,8 @@ urlpatterns = patterns(
     #     'stores.views.StoreView',
     #     name='StoreView'
     # ),
-    url(
-        r'^signup/',
-        RegisterProfile.as_view(),
-        name='signup'
-    ),
-    url(r'^signin/', 'userprofiles.views.signin', name='signin'),
-    url(r'^logout/', 'userprofiles.views.logout_view', name='logout'),
-    url(r'^login/', LoginView.as_view(), name='login'),
+
+
     url(r'^profile/$', ProfileView.as_view(), name='profile'),
     url(
         r'^perfil/$', PerfilRedirectView.as_view(url='/signup/'), name='perfil'
@@ -59,5 +55,14 @@ urlpatterns = patterns(
         r'^store_detail/(?P<store_name>[\w\-]+)/$',
         StoreDetailView.as_view(),
         name='store_detail'
-    )
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    ),
+    # url(
+    #     r'^media/(?P<path>.*)$',
+    #     'django.views.static.serve',
+    #     {'document_root': settings.MEDIA_ROOT}),
+    # url(
+    #     r'^static/(?P<path>.*)$',
+    #     'django.views.static.serve',
+    #     {'document_root': settings.STATIC_ROOT}),
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

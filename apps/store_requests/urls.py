@@ -12,4 +12,9 @@ urlpatterns = patterns(
         views.StoreRequestView.as_view(),
         name='store-request'
     ),
+    url(
+        r'stores/success/$',
+        views.SuccessStoreRequest.as_view(),
+        name='store-request-success'
+    ),
 )

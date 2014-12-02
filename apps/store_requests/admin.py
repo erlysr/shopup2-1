@@ -8,19 +8,18 @@ class RentTypeAdmin(admin.ModelAdmin):
 
 
 class StoreRequestAdmin(admin.ModelAdmin):
+
+    list_display = ('id',)
     #Checar como cambiar las etiquetas a espanol para que acepte acentos
-    list_display = (
-        'Contacto',
-        'Telefono',
-        'Email',
-        'Giro',
-        'Renta',
-        'Fecha_Inicio',
-        'Fecha_Termino',
-        'Precio',
-        'status_type'
-    )
-    ordering = ('-status_type', )
+    # list_display = (
+    #     'Giro',
+    #     'Renta',
+    #     'Fecha_Inicio',
+    #     'Fecha_Termino',
+    #     'Precio',
+    #     'status_type'
+    # )
+    # ordering = ('-status_type', )
     # list_filter = ('store_name', 'status')
     # search_fields = (
     #     'store_name',
@@ -28,7 +27,7 @@ class StoreRequestAdmin(admin.ModelAdmin):
     #     'address__address_line1',
     #     'address__neighborhood'
     # )
-    list_editable = ('status_type', )
+    # list_editable = ('status_type', )
     # inlines = [Store_RequestInLine, ]
     # change_list_template = "admin/change_list_filter_sidebar.html"
 

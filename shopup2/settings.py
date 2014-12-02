@@ -44,13 +44,13 @@ INSTALLED_APPS = (
     'core',
     'stores',
     'store_requests',
+    'userprofiles',
     'tabulators',
     # 'byzone_topups',
     # 'news',
     # 'popular_topups',
     # 'rent_types',
     # 'topups',
-    # 'userprofiles',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,6 +77,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'userprofiles.backends.EmailBackend',
+    # 'django.contrib.auth.backends.ModelBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
