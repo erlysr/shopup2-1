@@ -29,6 +29,9 @@
             <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
         </figure>
         {% if user.is_authenticated %}
+            <figure>
+            <img class="avatar" src="../media/{{ userprofile.avatar }}"></img>
+        </figure>
             <p class="nombre-usuario">Bienvenido: {{user.first_name}}</p>
             <a class="salir-link" href="{% url 'userprofiles:logout' %}">Salir</a>
         {% else %}
