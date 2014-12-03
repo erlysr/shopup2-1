@@ -93,7 +93,7 @@ class ProfileView(TemplateView):
                 'lastname': lastname,
                 'userprofile': self.get_userprofile()
             }
-
+            print(data.userprofile)
             context.update(data)
 
             if self.get_userprofile() is None:
