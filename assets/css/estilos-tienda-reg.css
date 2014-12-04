@@ -137,6 +137,17 @@
    	-webkit-box-shadow: 5px 5px 10px #1f8181;
    	-moz-box-shadow: 5px 5px 10px #1f8181;*/
 }
+#ventana .cuerpo .pleca2{
+	position: absolute;
+	top: 25px;
+	left: 625px;
+	z-index: 1;
+	width: 550px;
+	height: 60px;
+	/*box-shadow: 5px 5px 10px #1f8181;
+   	-webkit-box-shadow: 5px 5px 10px #1f8181;
+   	-moz-box-shadow: 5px 5px 10px #1f8181;*/
+}
 #ventana .cuerpo .tabla-check{
 	position: absolute;
 	right: 10px;
@@ -157,10 +168,30 @@
 	z-index: 0;
 
 }
+#ventana .cuadro-cont2{
+	position: absolute;
+	top: 25px;
+	left: 650px;
+	width: 500px;
+	height: 375px;
+	background: #27b7b5;
+	color: white;
+
+	font-size: 1em;
+	font-family: 'casperregular';
+	z-index: 0;
+
+}
 #ventana .cuadro-cont .form-vertical{
 	position: absolute;
 	top: 15px;
 	left: 10px;
+	z-index: 2;
+}
+#ventana .cuadro-cont2 .form-inline{
+	position: absolute;
+	top: 65px;
+	left: 50px;
 	z-index: 2;
 }
 #ventana .banner .listo-boton{
