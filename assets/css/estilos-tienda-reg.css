@@ -135,7 +135,7 @@
 	z-index: 0;
 
 }∫
-#form-contact{
+#ventana .cuadro-cont .form-horizontal{
 	position: absolute;
 	top: 140px;
 	left: 50px;
