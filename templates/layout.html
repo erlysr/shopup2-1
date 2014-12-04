@@ -43,6 +43,9 @@
         <ul class="menu-superior">
             {% if user.is_authenticated %}
             <li class="registra-tienda-opcion">
+                <a class="registra-tienda-link" href="{% url 'userprofiles:signup' %}">Registrarse</a>
+            </li>
+            <li class="registra-tienda-opcion">
                 <a class="registra-tienda-link" href="{% url 'stores:reg-store-1' %}">Registrar mi tienda</a>
             </li>
             <li class="registra-tienda-opcion">
