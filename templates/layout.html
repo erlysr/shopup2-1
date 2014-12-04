@@ -41,10 +41,10 @@
             <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
         {% endif %}
         <ul class="menu-superior">
-            {% if user.is_authenticated %}
             <li class="registra-tienda-opcion">
                 <a class="registra-tienda-link" href="{% url 'userprofiles:signup' %}">Registrarse</a>
             </li>
+            {% if user.is_authenticated %}
             <li class="registra-tienda-opcion">
                 <a class="registra-tienda-link" href="{% url 'stores:reg-store-1' %}">Registrar mi tienda</a>
             </li>
