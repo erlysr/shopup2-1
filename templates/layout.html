@@ -30,7 +30,7 @@
         </figure>
         {% if user.is_authenticated %}
             <figure>
-            <img class="avatar" src="{{ user.userprofiles.avatar.url }}"></img>
+            <img class="avatar" src="{{ user.userprofile.avatar.url }}"></img>
         </figure>
             <p class="nombre-usuario">Bienvenido: {{user.first_name}}</p>
             <a class="salir-link" href="{% url 'userprofiles:logout' %}">Salir</a>
