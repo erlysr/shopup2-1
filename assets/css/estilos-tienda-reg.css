@@ -157,9 +157,9 @@
 	z-index: 0;
 
 }
-#ventana .cuadro-cont .form-contact{
+#ventana .cuadro-cont .form-vertical{
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	left: 65px;
 	z-index: 2;
 }
