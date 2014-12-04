@@ -188,6 +188,12 @@
 	left: 10px;
 	z-index: 2;
 }
+#ventana .cuadro-cont .form-horizontal{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	z-index: 2;
+}
 #ventana .cuadro-cont2 .form-vertical{
 	position: absolute;
 	top: 15px;
