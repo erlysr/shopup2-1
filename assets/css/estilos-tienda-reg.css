@@ -1,0 +1,169 @@
+/*Variables
+    colorVerde: #61c8c7;
+    colorGris: #afb0b0;
+    verdeObscuro: #27b7b5;
+*/
+#body_registro_tienda{
+	width: 1280px;
+	margin: 0;
+	padding: 0;
+}
+#ventana{
+    width: 1280px;
+    padding-top: 12px;
+    background: #61c8c7;
+}
+#ventana .banner{
+	position: relative;
+
+}
+#ventana .titulo{
+	position: absolute;
+	top: 40px;
+	left: 124px;
+	font-family: 'poetsen_oneregular';
+	font-size: 2.3em;
+	color: #afb0b0;
+}
+#ventana .banner .fondo-rayado{
+	width: 1280px;
+	height: 118px;
+}
+#ventana .cuerpo{
+	position: relative;
+	width: 100%;
+	height: 435px;
+}
+
+#ventana .cuerpo .flecha-img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1280px;
+}
+#ventana .cuerpo .subtitulo{
+	position: absolute;
+	top: 50px;
+	left: 125px;
+	font-size: 2em;
+	color: #afb0b0;
+	font-family: 'poetsen_oneregular';
+}
+#ventana .cuerpo .linea-curva{
+	position: absolute;
+	top: 105px;
+	left: 140px;
+	width: 180px;
+}
+#ventana .cuerpo .lap{
+	position: absolute;
+	top: 150px;
+	left: 100px;
+
+}
+#ventana .cuerpo .circulos-cont{
+	width: 210px;
+	position: absolute;
+	top: 350px;
+	left: 130px;
+}
+#ventana .cuerpo .circulos-cont .circulo-gris{
+	position: relative;
+	background: #afb0b0;
+	width: 32px;
+	height: 32px;
+	-moz-border-radius: 16px; 
+   	-webkit-border-radius: 16px;
+	border-radius: 16px;
+
+
+	font-size: 1.8em;
+	color: white;
+	font-family: 'poetsen_oneregular';
+	text-align: center;
+	line-height: 1.3em;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#ventana .cuerpo .circulos-cont .circulo-verde{
+	position: relative;
+	background: #61c8c7;
+	width: 32px;
+	height: 32px;
+	-moz-border-radius: 16px; 
+   	-webkit-border-radius: 16px;
+	border-radius: 15px;
+
+
+	font-size: 1.8em;
+	color: white;
+	font-family: 'poetsen_oneregular';
+	text-align: center;
+	line-height: 1.3em;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#ventana .cuerpo .pleca{
+	position: absolute;
+	top: 25px;
+	left: 732px;
+	z-index: 1;
+	width: 365px;
+	/*box-shadow: 5px 5px 10px #1f8181;
+   	-webkit-box-shadow: 5px 5px 10px #1f8181;
+   	-moz-box-shadow: 5px 5px 10px #1f8181;*/
+}
+#ventana .cuerpo .tabla-check{
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+	z-index: 1;
+}
+#ventana .cuadro-cont{
+	position: absolute;
+	top: 25px;
+	left: 750px;
+	width: 325px;
+	height: 375px;
+	background: #27b7b5;
+	color: white;
+
+	font-size: 1em;
+	font-family: 'casperregular';
+	z-index: 0;
+
+}
+#ventana .cuadro-cont .forma{
+	position: absolute;
+	top: 125px;
+	left: 50px;
+	z-index: 2;
+}
+#ventana .banner .listo-boton{
+	background-image: url("../img/boton.jpg");
+	background-repeat: none;
+	border-radius: 5px;
+	color: white;
+	right: 5px;
+	font-size: 1.1em;
+	height: 31px;
+	line-height: 31px;
+	position: absolute;
+	text-align: center;
+	top: 10px;
+	width: 134px;
+	position: absolute;
+	top: 45px;
+	left: 580px;
+}
+#ventana .banner .listo-boton:hover{
+	background-image: url("../img/activo.png");
+	height: 43px;
+	line-height: 43px;
+	position: absolute;
+	top: 40px;
+	left: 575px;
+	width: 145px;
+}
