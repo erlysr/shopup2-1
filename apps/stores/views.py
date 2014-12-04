@@ -42,7 +42,7 @@ class RegStoreStepTwoView(FormView):
 
 class RegStoreStepThreeView(FormView):
     form_class = RegStoreStepThreeForm
-    template_name = 'reg_store_step_two.html'
+    template_name = 'reg_store_step_three.html'
 
     def get_success_url(self):
         return reverse('stores:reg-store-4')
@@ -54,7 +54,7 @@ class RegStoreStepThreeView(FormView):
 
 class RegStoreStepFourView(FormView):
     form_class = RegStoreStepFourForm
-    template_name = 'reg_store_step_two.html'
+    template_name = 'reg_store_step_four.html'
     success_url = '/'
 
     def form_valid(self, form):
