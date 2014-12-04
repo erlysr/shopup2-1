@@ -37,7 +37,7 @@ class RegStoreStepOneForm(forms.ModelForm):
         self.helper.form_method = 'post'
         self.helper.form_action = ''
         self.helper.form_class = 'form-vertical'
-        self.helper.label_class = 'col-lg-2'
+        #self.helper.label_class = 'col-lg-2'
         self.helper.field_class = 'col-lg-10'
         self.helper.layout = Layout(
             Fieldset(
