@@ -41,24 +41,46 @@
 	left: 0;
 	width: 1280px;
 }
-#ventana .cuerpo .subtitulo{
+#ventana .cuerpo .subtitulo-box{
 	position: absolute;
 	top: 50px;
-	left: 125px;
+	left: 110px;
+	width: 250px;
+}
+#ventana .cuerpo .subtitulo-text{
 	font-size: 2em;
 	color: #afb0b0;
 	font-family: 'poetsen_oneregular';
+	text-align: center;
 }
 #ventana .cuerpo .linea-curva{
 	position: absolute;
 	top: 105px;
-	left: 140px;
-	width: 180px;
+	left: 110px;
+	width: 250px;
 }
 #ventana .cuerpo .lap{
 	position: absolute;
 	top: 150px;
 	left: 100px;
+
+}
+#ventana .cuerpo .casita{
+	position: absolute;
+	top: 150px;
+	left: 145px;
+
+}
+#ventana .cuerpo .tablita-lapiz{
+	position: absolute;
+	top: 150px;
+	left: 150px;
+
+}
+#ventana .cuerpo .celutienda{
+	position: absolute;
+	top: 150px;
+	left: 165px;
 
 }
 #ventana .cuerpo .circulos-cont{
@@ -123,7 +145,7 @@
 }
 #ventana .cuadro-cont{
 	position: absolute;
-	top: 42px;
+	top: 25px;
 	left: 750px;
 	width: 325px;
 	height: 375px;
@@ -135,11 +157,11 @@
 	z-index: 0;
 
 }
-#form-contact{
+#ventana .cuadro-cont .forma{
 	position: absolute;
-	top: 0px;
+	top: 125px;
 	left: 50px;
-	z-index: 3;
+	z-index: 2;
 }
 #ventana .banner .listo-boton{
 	background-image: url("../img/boton.jpg");
