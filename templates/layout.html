@@ -27,9 +27,10 @@
                 </figure>
             </a>
         </div>
+        <!--
         <figure>
             <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
-        </figure>
+        </figure> -->
         {% if user.is_authenticated %}
         <figure>
             <img class="avatar" src="{{ user.userprofile.avatar.url }}"></img>
@@ -53,7 +54,7 @@
             </li>
         </ul>
     </header>
-
+<!--
     <div class="container">
         <nav class="navbar navbar-default">
 
@@ -76,7 +77,7 @@
 
 
         </nav>
-    </div>
+    </div> -->
 
    <!-- <section style="margin: 3em 0 3em 0; height: 460px;"> -->
         {% block content %}
