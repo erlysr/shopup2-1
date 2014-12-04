@@ -139,7 +139,7 @@
 	position: absolute;
 	top: 140px;
 	left: 50px;
-	z-index: 2;
+	z-index: 3;
 }
 #ventana .banner .listo-boton{
 	background-image: url("../img/boton.jpg");
