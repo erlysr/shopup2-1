@@ -10,7 +10,7 @@
 </head>
 <body>
     <header id="encabezado">
-        <a class="btn btn-primary" href="{% url 'core:home' %}">
+        <a href="{% url 'core:home' %}">
             <figure>
                 <img class="logo-shop-up" src="{% static 'img/logo_1.png' %}"></img>
             </figure>
@@ -31,7 +31,7 @@
             <img class="logo-buscar" src="{% static 'img/search.jpg' %}"></img>
         </figure>
         {% if user.is_authenticated %}
-            <figure>
+        <figure>
             <img class="avatar" src="{{ user.userprofile.avatar.url }}"></img>
         </figure>
             <p class="nombre-usuario">Bienvenido: {{user.first_name}}</p>
