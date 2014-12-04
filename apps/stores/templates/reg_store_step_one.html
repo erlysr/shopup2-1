@@ -61,34 +61,10 @@
 				</img>
 			</figure>
 			<div class="cuadro-cont">
-				<form class="forma" action="" method="post">
-					<label for="firstname">
-						Nombre(s)
-					</label>
-					<br>
-					<input type="text" id="firstname" name="firstname" size="40"/>
-					<br>
-					<br>
-					<label for="lastname">
-						Apellidos
-					</label>
-					<br>
-					<input type="text" id="lastname" name="lastname" size="40"/>
-					<br>
-					<br>
-					<label for="email">
-						Email
-					</label>
-					<br>
-					<input type="text" id="email" name="email" size="40"/>
-					<br>
-					<br>
-					<label for="phone">
-						Teléfono
-					</label>
-					<br>
-					<input type="text" id="phone" name="phone" size="40"/>
-				</form>
+				
+					{% crispy form %}
+
+
 			</div>
 		</div>
 		<div class="banner">
