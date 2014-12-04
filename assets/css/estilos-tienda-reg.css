@@ -188,7 +188,7 @@
 	left: 10px;
 	z-index: 2;
 }
-#ventana .cuadro-cont2 .form-inline{
+#ventana .cuadro-cont2 .form-vertical{
 	position: absolute;
 	top: 65px;
 	left: 50px;
