@@ -10,9 +10,11 @@
 </head>
 <body>
     <header id="encabezado">
-        <figure>
-            <img class="logo-shop-up" src="{% static 'img/logo_1.png' %}"></img>
-        </figure>
+        <a class="btn btn-primary" href="{% url 'core:home' %}">
+            <figure>
+                <img class="logo-shop-up" src="{% static 'img/logo_1.png' %}"></img>
+            </figure>
+        </a>
         <div class="redes-iconos">
             <a href="http://www.facebook.com/ShopUpMexico" target="_blank">
                 <figure>
@@ -41,6 +43,9 @@
             {% if user.is_authenticated %}
             <li class="registra-tienda-opcion">
                 <a class="registra-tienda-link" href="{% url 'stores:reg-store-1' %}">Registrar mi tienda</a>
+            </li>
+            <li class="registra-tienda-opcion">
+                <a class="registra-tienda-link" href="{% url 'storerequest:store-request' %}">Enviar Solicitud</a>
             </li>
             {% endif %}
             <li>
