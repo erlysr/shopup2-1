@@ -68,7 +68,7 @@ class RegStoreStepTwoForm(forms.ModelForm):
         self.helper.form_method = 'post'
         self.helper.form_action = ''
         self.helper.form_class = 'form-inline'
-        self.helper.label_class = 'col-md-4'
+        self.helper.label_class = 'col-md-8'
         self.helper.field_class = 'col-md-8'
         self.helper.layout = Layout(
             Fieldset(
