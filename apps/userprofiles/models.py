@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    usuario = models.OneToOneField(User)
+    username = models.OneToOneField(User)
     user_phone = models.CharField(max_length=12)
     avatar = models.ImageField(upload_to='userprofiles', blank=True)
     calification = models.SmallIntegerField(default=3)
