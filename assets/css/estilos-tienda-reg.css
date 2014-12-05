@@ -11,7 +11,7 @@
 }
 #ventana .banner{
 	position: relative;
-
+	width: 1280px;
 }
 #ventana .titulo{
 	position: absolute;
@@ -22,12 +22,10 @@
 	color: #afb0b0;
 }
 #ventana .banner .fondo-rayado{
-	width: 1280px;
 	height: 118px;
 }
 #ventana .cuerpo{
 	position: relative;
-	width: 100%;
 	height: 435px;
 }
 
