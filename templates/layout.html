@@ -42,9 +42,11 @@
 <body>
 	<!-- --------------------------HEADER----------------------------- -->
 	<header id="encabezado">
-		<figure>
-			<img class="logo-shop-up" src="{% static 'img/logo_1.png' %}"></img>
-		</figure>
+		<a href="{% url 'core:home' %}">
+			<figure>
+				<img class="logo-shop-up" src="{% static 'img/logo_1.png' %}"></img>
+			</figure>
+		</a>
 		<div class="redes-iconos">
 			<a href="http://www.facebook.com/ShopUpMexico" target="_blank">
 				<figure>
