@@ -3,7 +3,11 @@
     colorGris: #afb0b0;
     verdeObscuro: #27b7b5;
 */
-
+#body_registro_tienda{
+	width: 1280px;
+	margin: 0;
+	padding: 0;
+}
 #ventana{
     width: 1280px;
     padding-top: 12px;
@@ -11,7 +15,7 @@
 }
 #ventana .banner{
 	position: relative;
-	width: 1280px;
+
 }
 #ventana .titulo{
 	position: absolute;
@@ -22,10 +26,12 @@
 	color: #afb0b0;
 }
 #ventana .banner .fondo-rayado{
+	width: 1280px;
 	height: 118px;
 }
 #ventana .cuerpo{
 	position: relative;
+	width: 100%;
 	height: 435px;
 }
 
@@ -137,7 +143,7 @@
 	left: 625px;
 	z-index: 1;
 	width: 550px;
-	height: 78px;
+	height: 60px;
 	/*box-shadow: 5px 5px 10px #1f8181;
    	-webkit-box-shadow: 5px 5px 10px #1f8181;
    	-moz-box-shadow: 5px 5px 10px #1f8181;*/
@@ -176,21 +182,15 @@
 	z-index: 0;
 
 }
-#ventana .cuadro-cont .form-vertical{
+#ventana .cuadro-cont .forma{
 	position: absolute;
-	top: 15px;
-	left: 10px;
+	top: 125px;
+	left: 50px;
 	z-index: 2;
 }
-#ventana .cuadro-cont .form-horizontal{
+#ventana .cuadro-cont2 .forma{
 	position: absolute;
-	top: 15px;
-	left: 10px;
-	z-index: 2;
-}
-#ventana .cuadro-cont2 .form-vertical{
-	position: absolute;
-	top: 15px;
+	top: 65px;
 	left: 50px;
 	z-index: 2;
 }

@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+
+   <!-- ----------------IMAGEN PRINCIPAL----------------------------- -->
+	<section id="principal-section">
+		<figure>
+			<img class="imagen-fondo" src="{% static 'img/fondocortado.jpg' %}"></img>
+		</figure>
+		<figure>
+			<img class="shop-up-logo" src="{% static 'img/logo_2.png' %}"></img>
+		</figure>
+		<a class="funciona-boton-link" href="#">
+			<div class="funciona-boton">
+				¿Como funciona?
+			</div>
+		</a>
+	</section>
+
+	<!-- ----------------------MARQUESINA----------------------------- -->
+	<section id="marquesina-section">
+		<figure>
+			<img class="marquesina" src="{% static 'img/marquesina.png' %}"></img>
+		</figure>
+		<div class="labels-cont">
+			<p class="titulo-label1">lo mejor de shop-
+			</p>
+			<p class="titulo-label2">up</p>
+		</div>
+		<figure class="pleca-curvas">
+			<img src="{% static 'img/lineacurva.png' %}"></img>
+		</figure>
+	</section>
+
+
+    	<!-- -------------------------TIENDAS RENGLON -------------------- -->
+	<section id="tiendas-section">
+		<div class="tiendas-cont">
+
+			<div class="tiendas-encabezado">
+				<div class="titulo-labels">
+
+					<p class="titulo-label1">Lo
+					</p> 
+					<p class="titulo-label2">popular
+					</p>	
+				</div>
+				<a class="quiero-mas-boton" href="/stores_topups/?page=2">¡Quiero ver más!
+				</a>
+			</div>
+			{% for store in object_list %}
+			<div class="espacio-cont">
+				<div class="espacio-info">
+					<div class="textos-cont">
+						<p class="texto-gris">
+							{{ store.store_name }}
+						</p>
+						<!--
+						<p class="texto-verde">
+							-condesa
+						</p> -->
+					</div>
+					<div class="calificacion">
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+						<a class="icon-star"></a>
+					</div>
+				</div>
+				<a href="espacio.html">
+					<div class="imagen-cont">
+						<figure>
+							<img class="tienda-foto" src="../media/{{ store.logo }}"></img>
+						</figure>
+
+						<figure>
+							<img class="triang-pleca" src="{% static 'img/tiendas/trianguloprecios.png' %}"></img>
+						</figure>
+						<p class="precio-label">
+							${{ store.price }}
+						</p>
+					</div>
+				</a>
+				<p class="ubica-espacio">
+					{{ store.tabulator }}
+				</p>
+				<p class="publicado-por">
+					Publicado por: {{ store.contact }}
+				</p>
+			</div>
+			{% empty %}
+				<div class="espacio-cont">No hay tiendas todavia</div>
+			{% endfor %}
+			
+		</div>
+	</section>
+
+{% endblock content %}

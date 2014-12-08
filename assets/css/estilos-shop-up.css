@@ -1,3 +1,11 @@
+/*Variables
+    colorVerde: #61c8c7;
+    colorGris: #afb0b0;
+    GrisClaro: #d2d2d2;
+    verdeObscuro: #27b7b5;
+    verdeObscuro2:#459492;
+*/
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('../fonts/icomoon/icomoon.eot?yxz54i');
@@ -147,6 +155,320 @@ a:hover
 {
     color: #61c8c7;
 }
+/********************** VENTANAS MODALES ******************/
+#cerrar{
+	font-weight: 900;
+	text-align: right;
+	width: 100%;
+	height: 15px;
+	line-height: 18px;
+}
+.ventana{
+	width: 100%;
+	color: white;
+	height: 100%;
+	position: fixed;
+	background-image: url("../img/bg-modal.png");
+	top: 0;
+	left: 0;
+	z-index: 4;
+	display: none;
+}
+.ventana-registro{
+	width: 100%;
+	color: white;
+	height: 100%;
+	position: fixed;
+	background-image: url("../img/bg-modal.png");
+	top: 0;
+	left: 0;
+	z-index: 4;
+	display: none;
+}
+#menu-funciona{
+	background-image: url("../img/blue-bg-trans.png");
+	background-repeat: none;
+	left: 554px;
+	position: absolute;
+	top: 470px;
+	width: 184px;
+	border-radius: 5px;
+	display: none;
+}
+#menu-funciona .ren1{
+	display: block;
+	margin-left: 20px;
+	border-bottom: 1px;
+	line-height: 3em;
+	color: white;
+}
+#menu-funciona .ren2{
+	display: block;
+	margin-left: 20px;
+	border-bottom: 1px;
+	line-height: 3em;
+	color: white;
+}
+.ventana-buscas{
+	width: 100%;
+	color: white;
+	height: 100%;
+	position: fixed;
+	background-image: url("../img/bg-modal.png");
+	top: 0;
+	left: 0;
+	z-index: 4;
+	display: none;
+}
+.ventana-rentas{
+	width: 100%;
+	color: white;
+	height: 100%;
+	position: fixed;
+	background-image: url("../img/bg-modal.png");
+	top: 0;
+	left: 0;
+	z-index: 4;
+	display: none;
+}
+#body-como-funciona{
+	width: 1020px;
+	position: absolute;
+	top: 25px;
+	left: 130px;
+}
+#body-como-funciona .imagen-como-funciona{
+	width: 1020px;
+}
+
+
+
+/********************** Inicio de Sesion ******************/
+#body-login
+{
+	background: #459492;
+	color: white;
+	font-family: "casperregular";
+	font-size: 13px;
+	width: 345px;
+	margin: 50px auto;
+
+}
+#body-login .seccion-superior{
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: #61c8c7;
+	height: 295px;
+	position: relative;
+}
+#body-login .seccion-superior .pleca{
+	width: 345px;
+	margin-left: -5px;
+}
+#body-login .seccion-superior .forma{
+	margin: 0 auto;
+	width: 225px;
+}
+#body-login .seccion-superior .curvas-cont{
+		margin: 40px auto;
+		width: 230px;
+}
+#body-login .seccion-superior .curvas-cont .curvas{
+	width: 230px;
+}
+#body-login .seccion-inferior{
+	text-align: center;
+	background: #d2d2d2;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	color: #d2d2d2;
+	position: relative;
+}
+#body-login .seccion-inferior .container-blanco{
+	
+	background-image: url("../img/texturagris_1.jpg");
+	height: 175px;
+}
+#body-login .seccion-inferior .container-blanco .ren1 .liga-btn{
+	
+	width: 134px;
+	text-align: center;
+	position: absolute;
+	left: 50px;
+	top: 33px;
+}
+
+#boton{
+	background-image: url("../img/botoniniciarsesion.png");
+	background-repeat: none;
+	width: 246px;
+	
+	height: 31px;
+	line-height: 31px;
+	color: white;
+	border-radius: 5px;
+	font-size: 1.1em;
+	text-align: center;
+
+
+}
+#boton:hover
+{
+	background-image: url("../img/botoniniciarsesion-hover.png");
+	width: 264px;
+	height: 46px;
+	line-height: 46px;
+	margin-top: -7px;
+	margin-left: -9px;
+
+}
+#body-login .seccion-inferior .container-blanco .ren2 .texto-gris{
+	position: absolute;
+	top: 150px;
+	left: 60px;
+}
+/************************ Registro de Usuario **************************/
+#body-registro-usuario
+{
+	background: #459492;
+	color: white;
+	font-family: "casperregular";
+	font-size: 13px;
+	width: 513px;
+	margin: 5px auto;	
+}
+#body-registro-usuario .seccion-superior{
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: #61c8c7;
+	height: 570px;
+	position: relative;
+}
+#body-registro-usuario .seccion-superior .pleca{
+	width: 523px;
+	margin-left: -10px;
+}
+#body-registro-usuario .seccion-superior .titulo{
+	color: white;
+	font-size: 2.5em;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-family: "poetsen_oneregular";
+}
+#body-registro-usuario .seccion-superior .curvas-cont{
+		margin: 10px auto 40px auto;
+		width: 230px;
+}
+#body-registro-usuario .seccion-superior .curvas-cont .curvas{
+	width: 230px;
+}
+#body-registro-usuario .seccion-superior .forma-col1{
+	width: 240px;
+	float: left;
+}
+#body-registro-usuario .seccion-superior .forma-col1 .forma{
+	margin: 0 auto;
+	width: 180px;
+}
+#body-registro-usuario .seccion-superior .forma-col2{
+	width: 240px;
+	height: 351px;
+	float: left;
+	text-align: center;
+	position: relative;
+}
+#body-registro-usuario .seccion-superior .forma-col2 .foto-perfil{
+}
+#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn::-webkit-file-upload-button {
+	visibility: hidden;
+	margin: 0 auto;
+}
+#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn:before{
+	content: 'subir foto de perfil';
+	display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    color: black;
+}
+#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn:hover::before {
+  border-color: black;
+}
+#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+#body-registro-usuario .seccion-superior .forma-col2 .picture-fig{
+	position: absolute;
+	bottom: 0;
+	right: 20px;
+}
+#body-registro-usuario .seccion-inferior{
+	text-align: center;
+	background: #d2d2d2;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	color: #d2d2d2;
+	position: relative;
+}
+#body-registro-usuario .seccion-inferior .container-blanco{
+	
+	background-image: url("../img/texturagris_1.jpg");
+	height: 60px;
+}
+#body-registro-usuario .seccion-inferior .container-blanco .ren1 .liga-btn{
+	
+	width: 135px;
+	text-align: center;
+	position: absolute;
+	left: 189px;
+	top: 19px;
+}
+
+#boton-chico{
+	background-image: url("../img/boton.jpg");
+	background-repeat: none;
+	width: 135px;
+	
+	height: 31px;
+	line-height: 30px;
+	color: white;
+	border-radius: 5px;
+	font-size: 1.1em;
+	text-align: center;
+
+
+}
+#boton-chico:hover
+{
+	background-image: url("../img/activo.png");
+	width: 145px;
+	height: 43px;
+	line-height: 43px;
+	margin-top: -6px;
+	margin-left: -5px;
+
+}
+#body-registro-usuario .seccion-inferior .container-blanco .ren2 .texto-gris{
+	position: absolute;
+	top: 150px;
+	left: 60px;
+}
 body
 {
 	background: white;
@@ -154,8 +476,7 @@ body
 	font-family: "casperregular";
 	font-size: 13px;
 	width: 1280px;
-	margin: 0;
-	padding: 0;
+
 }
 #detalles-tienda
 {
@@ -243,7 +564,7 @@ body
 {
 	font-size: 1.3em;
 	position: relative;
-	height: 100px;
+	height: 95px;
 	border-bottom: 7px solid #61c8c7;
 }
 #encabezado .logo-buscar
@@ -323,7 +644,7 @@ body
 	height: 80px;
 	position: absolute;
 	top: 8px;
-	right: 550px;
+	right: 350px;
 	border-radius: 50%;
 }
 figure
@@ -441,7 +762,7 @@ li
 }
 #principal-section .funciona-boton
 {
-	background-image: url("../img/fondo_boton_189x60px.jpg");
+	background-image: url("../img/fondo-boton.jpg");
 	background-repeat: none;
 	font-size: 1.3em;
 	left: 554px;
