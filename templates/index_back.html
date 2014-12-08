@@ -5,40 +5,9 @@
 	<meta description="Shop-up, renta tu espacio">
 	<title>Shop-up, renta tu espacio</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos-shop-up.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript">
-		function openVentana(){
-			$(".ventana").slideDown("slow");
-		}
-		function closeVentana(){
-			$(".ventana").slideUp("fast");
-		}
-		function openVentanaRegistro(){
-			$(".ventana").slideUp("fast");
-			$(".ventana-registro").slideDown("slow");
-		}
-		function closeVentanaRegistro(){
-			$(".ventana-registro").slideUp("fast");
-		}
-		function openMenuFunciona(){
-			$("#menu-funciona").slideDown("fast");
-		}
-		function openVentanaBuscas(){
-			$(".ventana-buscas").slideDown("slow");
-		}
-		function openVentanaRentas(){
-			$(".ventana-rentas").slideDown("slow");
-		}
-		function closeVentanaBuscas(){
-			$(".ventana-buscas").slideUp("fast");
-		}
-		function closeVentanaRentas(){
-			$(".ventana-rentas").slideUp("fast");
-		}
-	</script>
 </head>
 <body>
-	<!-- --------------------------HEADER----------------------------- -->
+	<!-- --------------------------HEADER Erly----------------------------- -->
 	<header id="encabezado">
 		<figure>
 			<img class="logo-shop-up" src="img/logo_1.png"></img>
@@ -60,9 +29,6 @@
 		</figure>
 		<ul class="menu-superior">
 			<li class="registra-tienda-opcion">
-				<a class="registra-tienda-link" href="javascript:openVentana();">Entrar</a>
-			</li>
-			<li class="registra-tienda-opcion">
 				<a class="registra-tienda-link" href="#">Registrar mi tienda</a>
 			</li>
 			<li>
@@ -70,168 +36,6 @@
 			</li>
 		</ul>	
 	</header>
-	<!-- ----------------- VENTANAS MODALES -------------------- -->
-	<!-- ---------------------- SECCION LOGIN ----------------------------- -->
-	<div class="ventana">
-		<div id="body-login">
-			<div id="cerrar">
-				<a href="javascript:closeVentana();">Cerrar X</a>
-			</div>
-			<section class="seccion-superior">
-				<figure>
-					<img class="pleca" src="img/pleca-clean.png"></img>
-				</figure>
-				<form class="forma">
-					<label for="email">
-						Correo electrónico
-					</label>
-					<br>
-					<input type="text" id="email" name="email" size="40"/>
-					<br>
-					<br>
-					<label for="password">
-						Contraseña
-					</label>
-					<br>
-					<input type="text" id="password" name="password" size="40"/>
-					<br>
-				</form>
-				<figure class="curvas-cont">
-					<img class="curvas" src="img/lineacurva-blanca.png"></img>
-				</figure>
-			</section>
-			<section class="seccion-inferior">
-				<div class="container-blanco">
-					<div class="ren1">
-						<a class="liga-btn" href="">
-							<div id="boton">Iniciar Sesión
-							</div>
-						</a>
-					</div>
-
-					<div class="ren2">
-						<!-- <p>
-							¿Has olvidado tu contraseña?
-						</p> -->
-						<p class="texto-gris">
-							¿Aun no tienes una cuenta? <a class="registrate-link" href="javascript:openVentanaRegistro();">Registrate</a>
-						</p>
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
-				<!-- ---------------------- VENTANA REGISTRO ----------------------------- -->
-	<div class="ventana-registro">
-		<div id="body-registro-usuario">
-			<div id="cerrar">
-				<a href="javascript:closeVentanaRegistro();">Cerrar X</a>
-			</div>
-			<section class="seccion-superior">
-				<figure>
-					<img class="pleca" src="img/pleca-registro-u.png"></img>
-				</figure>
-				<p class="titulo">
-					Registro de usuario
-				</p>
-				<figure class="curvas-cont">
-					<img class="curvas" src="img/lineacurva-blanca.png"></img>
-				</figure>
-				<div class="forma-col1">
-					<form class="forma">
-						<label for="nombre">
-							Nombre(s)
-						</label>
-						<br>
-						<input type="text" id="nombre" name="nombre" size="30"/>
-						<br>
-						<br>
-						<label for="apellido">
-							Apellidos
-						</label>
-						<br>
-						<input type="text" id="apellido" name="apellido" size="30"/>
-						<br>
-						<br>
-						<label for="telefono">
-							Teléfono
-						</label>
-						<br>
-						<input type="text" id="telefono" name="telefono" size="30"/>
-						<br>
-						<br>
-						<label for="correo">
-							Correo
-						</label>
-						<br>
-						<input type="text" id="correo" name="correo" size="30"/>
-						<br>
-						<br>
-						<label for="password">
-							Contraseña
-						</label>
-						<br>
-						<input type="text" id="password" name="password" size="30"/>
-						<br>
-						<br>
-						<label for="password2">
-							Confirmar contraseña
-						</label>
-						<br>
-						<input type="text" id="password2" name="password2" size="30"/>
-						<br>
-					</form>
-				</div>
-				<div class="forma-col2">
-					<figure>
-						<img class="foto-perfil" src="img/fotoperfil.jpg"></img>
-					</figure>
-					<form class="foto-form">
-						<br>
-							<input type="file" class="foto-btn"/>
-						<br>
-					</form>
-					<figure>
-						<img class="tabla-registro" src="img/tabla-registro.png"></img>
-					</figure>
-				</div>
-			</section>
-			<section class="seccion-inferior">
-				<div class="container-blanco">
-					<div class="ren1">
-						<a class="liga-btn" href="">
-							<div id="boton-chico">Listo
-							</div>
-						</a>
-					</div>
-				</div>
-			</section>
-		</div>
-		
-	</div>
-				<!-- ---------------------- VENTANA RENTAS ----------------------------- -->
-	<div class="ventana-rentas">
-		<div id="body-como-funciona">
-			<div id="cerrar">
-					<a href="javascript:closeVentanaRentas();">Cerrar X</a>
-			</div>
-			<figure>
-				<img class="imagen-como-funciona" src="img/rentas_1280.jpg">
-			</figure>
-		</div>
-	</div>
-			<!-- ---------------------- VENTANA BUSCAS ----------------------------- -->
-	<div class="ventana-buscas">
-		<div id="body-como-funciona">
-			<div id="cerrar">
-					<a href="javascript:closeVentanaBuscas();">Cerrar X</a>
-			</div>
-			<figure>
-				<img class="imagen-como-funciona" src="img/buscas_1280.jpg">
-			</figure>
-		</div>
-	</div>
-
 
 	<!-- ----------------IMAGEN PRINCIPAL----------------------------- -->
 	<section id="principal-section">
@@ -241,19 +45,9 @@
 		<figure>
 			<img class="shop-up-logo" src="img/logo_2.png"></img>
 		</figure>
-		<a href="#">
-			<a class="funciona-boton" href="javascript:openMenuFunciona();">
+		<a class="funciona-boton-link" href="#">
+			<div class="funciona-boton">
 				¿Como funciona?
-			</a>
-			<div id="menu-funciona">
-				<div class="menu-cont">
-					<a href="javascript:openVentanaRentas();" class="ren1">
-						Renta un espacio
-					</a>
-					<a href="javascript:openVentanaBuscas();" class="ren2">
-						Encuentra un espacio
-					</a>
-				</div>
 			</div>
 		</a>
 	</section>
