@@ -4,7 +4,98 @@
 
 
 {% block content %}
+<!-- ----------------- VENTANAS MODALES -------------------- -->
+<!-- ---------------------- SECCION LOGIN ----------------------------- -->
+<div class="ventana">
+	<div id="body-login">
+		<div id="cerrar">
+			<a href="javascript:closeVentana();">Cerrar X</a>
+		</div>
+		<section class="seccion-superior">
+			<figure>
+				<img class="pleca" src="{% static 'img/pleca-clean.png' %}"></img>
+			</figure>
+			{% crispy form_login %}
+			<figure class="curvas-cont">
+				<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
+			</figure>
+		</section>
+		<section class="seccion-inferior">
+			<div class="container-blanco">
+				<div class="ren1">
+					<a class="liga-btn" href="">
+						<div id="boton">Iniciar Sesión
+						</div>
+					</a>
+				</div>
 
+				<div class="ren2">
+						<!-- <p>
+							¿Has olvidado tu contraseña?
+						</p> -->
+						<p class="texto-gris">
+							¿Aun no tienes una cuenta? <a class="registrate-link" href="javascript:openVentanaRegistro();">Registrate</a>
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- ---------------------- VENTANA REGISTRO ----------------------------- -->
+	<div class="ventana-registro">
+		<div id="body-registro-usuario">
+			<div id="cerrar">
+				<a href="javascript:closeVentanaRegistro();">Cerrar X</a>
+			</div>
+			<section class="seccion-superior">
+				<figure>
+					<img class="pleca" src="{% static 'img/pleca-registro-u.png' %}"></img>
+				</figure>
+				<p class="titulo">
+					Registro de usuario
+				</p>
+				<figure class="curvas-cont">
+					<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
+				</figure>
+				
+				{% crispy form_profile %}
+				
+			</section>
+			<section class="seccion-inferior">
+				<div class="container-blanco">
+					<div class="ren1">
+						<a class="liga-btn" href="">
+							<div id="boton-chico">Listo
+							</div>
+						</a>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	</div>
+	<!-- ---------------------- VENTANA RENTAS ----------------------------- -->
+	<div class="ventana-rentas">
+		<div id="body-como-funciona">
+			<div id="cerrar">
+				<a href="javascript:closeVentanaRentas();">Cerrar X</a>
+			</div>
+			<figure>
+				<img class="imagen-como-funciona" src="{% static 'img/rentas_1280.jpg' %}">
+			</figure>
+		</div>
+	</div>
+	<!-- ---------------------- VENTANA BUSCAS ----------------------------- -->
+	<div class="ventana-buscas">
+		<div id="body-como-funciona">
+			<div id="cerrar">
+				<a href="javascript:closeVentanaBuscas();">Cerrar X</a>
+			</div>
+			<figure>
+				<img class="imagen-como-funciona" src="{% static 'img/buscas_1280.jpg' %}">
+			</figure>
+		</div>
+	</div>
 
 	<!-- ----------------IMAGEN PRINCIPAL----------------------------- -->
 	<section id="principal-section">
