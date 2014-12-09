@@ -4,7 +4,7 @@ from userprofiles.forms import EmailAuthenticationForm, ProfileForm
 
 class Home(ListView):
 
-    template_name = 'signin.html'
+    template_name = 'home.html'
     queryset = Store.objects.filter(status__name='Aprobada')
     paginate_by = 4
     
