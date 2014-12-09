@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 from stores.models import Store
-from .userprofiles import forms
+from userprofiles.forms import EmailAuthenticationForm, ProfileForm
 
 class Home(ListView):
 
