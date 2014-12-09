@@ -367,55 +367,23 @@ a:hover
 #body-registro-usuario .seccion-superior .curvas-cont .curvas{
 	width: 230px;
 }
-#body-registro-usuario .seccion-superior .forma-col1{
-	width: 240px;
-	float: left;
-}
-#body-registro-usuario .seccion-superior .forma-col1 .forma{
+
+#body-registro-usuario .seccion-superior .forma{
 	margin: 0 auto;
 	width: 180px;
 }
-#body-registro-usuario .seccion-superior .forma-col2{
+#forma-col1{
+	width: 240px;
+	float: left;
+}
+#forma-col2{
 	width: 240px;
 	height: 351px;
 	float: left;
 	text-align: center;
 	position: relative;
 }
-#body-registro-usuario .seccion-superior .forma-col2 .foto-perfil{
-}
-#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn::-webkit-file-upload-button {
-	visibility: hidden;
-	margin: 0 auto;
-}
-#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn:before{
-	content: 'subir foto de perfil';
-	display: inline-block;
-    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 700;
-    font-size: 10pt;
-    color: black;
-}
-#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn:hover::before {
-  border-color: black;
-}
-#body-registro-usuario .seccion-superior .forma-col2 .foto-form .foto-btn:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
 
-#body-registro-usuario .seccion-superior .forma-col2 .picture-fig{
-	position: absolute;
-	bottom: 0;
-	right: 20px;
-}
 #body-registro-usuario .seccion-inferior{
 	text-align: center;
 	background: #d2d2d2;
