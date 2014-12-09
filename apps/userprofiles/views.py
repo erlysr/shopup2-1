@@ -113,7 +113,7 @@ class ProfileView(TemplateView):
 class LoginView(FormView):
 
     form_class = forms.EmailAuthenticationForm
-    template_name = 'login.html'
+    template_name = 'home.html'
     success_url = '/'
 
     def form_valid(self, form):
