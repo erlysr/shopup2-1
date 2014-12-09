@@ -15,7 +15,7 @@
 				<figure>
 					<img class="pleca" src="{% static 'img/pleca-clean.png' %}"></img>
 				</figure>
-				<form class="forma" action="" method="post">
+				<form class="forma" action="{% url 'userprofiles:signin' %}" method="post">
 					{% csrf_token %}
 					{{form_login.as_p}}
 					<input type="submit" value="Ingresar">
