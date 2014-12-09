@@ -62,7 +62,7 @@
 					<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
 				</figure>
 				<div class="forma-col1">
-					<form class="forma" action="" method="post">
+					<form class="forma" action={% url 'userprofiles:signin' %} method="post">
 						{% csrf_token %}
 						{{form_profile.as_p}}
 					</form>
