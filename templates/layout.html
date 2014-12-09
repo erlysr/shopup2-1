@@ -8,37 +8,8 @@
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos-tienda-reg.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos-shop-up.css' %}">
-	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-	<script type="text/javascript">
-		function openVentana(){
-			$(".ventana").slideDown("slow");
-		}
-		function closeVentana(){
-			$(".ventana").slideUp("fast");
-		}
-		function openVentanaRegistro(){
-			$(".ventana").slideUp("fast");
-			$(".ventana-registro").slideDown("slow");
-		}
-		function closeVentanaRegistro(){
-			$(".ventana-registro").slideUp("fast");
-		}
-		function openMenuFunciona(){
-			$("#menu-funciona").slideDown("fast");
-		}
-		function openVentanaBuscas(){
-			$(".ventana-buscas").slideDown("slow");
-		}
-		function openVentanaRentas(){
-			$(".ventana-rentas").slideDown("slow");
-		}
-		function closeVentanaBuscas(){
-			$(".ventana-buscas").slideUp("fast");
-		}
-		function closeVentanaRentas(){
-			$(".ventana-rentas").slideUp("fast");
-		}
-	</script>
+    {% block extra_css %}
+    {% endblock extra_css %}
 </head>
 <body>
 	<!-- --------------------------HEADER----------------------------- -->
@@ -81,7 +52,7 @@
 			<li>
 				<a class="contacto-opcion" href="#">Contacto</a>
 			</li>
-		</ul>	
+		</ul>
 	</header>
 
     {% block content %}
@@ -104,10 +75,42 @@
 				</div>
 			</a>
 		</div>
-		<div class="powered-label">Powered by 
+		<div class="powered-label">Powered by
 			<a id="piplusone-link" target="_blank" href="http://www.piplusone.mx">PI.PLUS.ONE</a>
 		</div>
 	</footer>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript">
+        function openVentana(){
+            $(".ventana").slideDown("slow");
+        }
+        function closeVentana(){
+            $(".ventana").slideUp("fast");
+        }
+        function openVentanaRegistro(){
+            $(".ventana").slideUp("fast");
+            $(".ventana-registro").slideDown("slow");
+        }
+        function closeVentanaRegistro(){
+            $(".ventana-registro").slideUp("fast");
+        }
+        function openMenuFunciona(){
+            $("#menu-funciona").slideDown("fast");
+        }
+        function openVentanaBuscas(){
+            $(".ventana-buscas").slideDown("slow");
+        }
+        function openVentanaRentas(){
+            $(".ventana-rentas").slideDown("slow");
+        }
+        function closeVentanaBuscas(){
+            $(".ventana-buscas").slideUp("fast");
+        }
+        function closeVentanaRentas(){
+            $(".ventana-rentas").slideUp("fast");
+        }
+    </script>
+    {% block extra_js %}
+    {% endblock extra_js %}
 </body>
-
 </html>

@@ -59,6 +59,7 @@ class EmailAuthenticationForm(forms.Form):
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_action = reverse('userprofiles:signin')
+        self.helper.form_id = 'form_login'
         self.helper.form_class = 'forma'
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
@@ -66,9 +67,6 @@ class EmailAuthenticationForm(forms.Form):
                 '',
                 'email',
                 'password'
-            ),
-            FormActions(
-                Submit('save', 'save')
             )
         )
 
