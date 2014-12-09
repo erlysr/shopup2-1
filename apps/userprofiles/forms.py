@@ -37,18 +37,22 @@ class ProfileForm(UserCreationForm):
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
             MultiField(
-                'Llena los espacios',
+                '',
                 Div(
                     'first_name',
                     'last_name',
                     'username',
                     'email',
                     'password1',
-                    'password2'
+                    'password2',
+                    css_id = 'forma-col1'
                 ),
-                'user_phone',
-                'avatar',
-                'calification'
+                Div(
+                    'user_phone',
+                    'avatar',
+                    'calification',
+                    css_id = 'forma-col2'
+                )
             )
         )
         #self.fields['last_name'].label = 'Apellidos'
