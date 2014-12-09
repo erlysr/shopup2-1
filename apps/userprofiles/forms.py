@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, Field, Submit, HTML, Div, Multifield
+from crispy_forms.layout import Layout, Fieldset, Field, Submit, HTML, Div, MultiField
 from crispy_forms.bootstrap import FormActions, PrependedText
 
 
@@ -36,7 +36,7 @@ class ProfileForm(UserCreationForm):
         self.helper.form_class = 'forma'
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
-            Multifield(
+            MultiField(
                 'Llena los espacios',
                 Div(
                     'first_name',
