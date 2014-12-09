@@ -165,7 +165,7 @@
 
 	font-size: 1em;
 	font-family: 'casperregular';
-	z-index: 0;
+	z-index: 5;
 
 }
 #ventana .cuadro-cont2{
@@ -179,20 +179,20 @@
 
 	font-size: 1em;
 	font-family: 'casperregular';
-	z-index: 0;
+	z-index: 5;
 
 }
 #ventana .cuadro-cont .forma{
 	position: absolute;
 	top: 125px;
 	left: 50px;
-	z-index: 2;
+	z-index: 5;
 }
 #ventana .cuadro-cont2 .forma{
 	position: absolute;
 	top: 65px;
 	left: 50px;
-	z-index: 2;
+	z-index: 5;
 }
 #ventana .banner .listo-boton{
 	background-image: url("../img/boton.jpg");
