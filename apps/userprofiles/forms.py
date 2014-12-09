@@ -63,6 +63,7 @@ class EmailAuthenticationForm(forms.Form):
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
             Fieldset(
+                '',
                 'email',
                 'password'
             ),
@@ -70,7 +71,6 @@ class EmailAuthenticationForm(forms.Form):
                 Submit('save', 'save')
             )
         )
-
 
     def clean(self):
         email = self.cleaned_data.get('email')
