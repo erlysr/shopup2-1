@@ -16,11 +16,6 @@
 				<img class="pleca" src="{% static 'img/pleca-clean.png' %}"></img>
 			</figure>
 			{% crispy form_login %}
-			<!-- <form class="forma" action="" method="post">
-				{% csrf_token %}
-				{{form_login.as_p}}
-				<input type="submit" value="Ingresar">
-			</form> -->
 			<figure class="curvas-cont">
 				<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
 			</figure>
@@ -783,5 +778,16 @@
 			<img class="fondo-img" src="{% static 'img/fondofinaldelapagina.jpg' %}"></img>
 		</figure>
 	</section>
+{% endblock content %}
 
-	{% endblock content %}
+
+
+{% block extra_js %}
+<script>
+	$(function() {
+		$("#boton").click(function(){
+			$("#form_login").submit();
+		});
+	});
+</script>
+{% endblock extra_js %}
