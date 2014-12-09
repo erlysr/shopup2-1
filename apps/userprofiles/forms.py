@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, Field, Submit, HTML, Div
+from crispy_forms.layout import Layout, Fieldset, Field, Submit, HTML, Div, MultiField
 from crispy_forms.bootstrap import FormActions, PrependedText
 
 
