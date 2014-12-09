@@ -785,7 +785,8 @@
 {% block extra_js %}
 <script>
 	$(function() {
-		$("#boton").click(function(){
+		$("#boton").click(function(event){
+			event.preventDefault();
 			$("#form_login").submit();
 		});
 	});
