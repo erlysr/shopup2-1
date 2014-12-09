@@ -58,11 +58,7 @@
 					<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
 				</figure>
 				<div class="forma-col1">
-					<form class="forma" enctype="multipart/form-data" action="{% url 'userprofiles:signup' %}" method="post">
-						{% csrf_token %}
-						{{form_profile.as_p}}
-						<input type="submit" value="Registrarse">
-					</form>
+					{% crispy form_profile %}
 				</div>
 				<div class="forma-col2">
 					<figure>
@@ -788,6 +784,14 @@
 		$("#boton").click(function(event){
 			event.preventDefault();
 			$("#form_login").submit();
+		});
+	});
+</script>
+<script>
+	$(function() {
+		$("#boton-chico").click(function(event){
+			event.preventDefault();
+			$("#form_profile").submit();
 		});
 	});
 </script>

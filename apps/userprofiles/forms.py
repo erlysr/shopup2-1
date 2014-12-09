@@ -30,12 +30,31 @@ class ProfileForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
-        self.fields['last_name'].label = 'Apellidos'
-        self.fields['email'].required = True
-        self.fields['email'].label = 'Tu correo'
+        self.helper = FormHelper()
+        self.helper.form_action = reverse('userprofiles:signup')
+        self.helper.form_id = 'form_profile'
+        self.helper.form_class = 'forma'
+        self.helper.form_method = 'post'
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                'first_name',
+                'last_name',
+                'username',
+                'email',
+                'password1',
+                'password2',
+                'user_phone',
+                'avatar',
+                'calification'
+            )
+        )
+        #self.fields['last_name'].label = 'Apellidos'
+        #self.fields['email'].required = True
+        #self.fields['email'].label = 'Tu correo'
 
-        self.fields['user_phone'].label = 'Teléfono'
-        self.fields['calification'].label = 'Calificación'
+        #self.fields['user_phone'].label = 'Teléfono'
+        #self.fields['calification'].label = 'Calificación'
 
 
 class UserCreationEmailForm(UserCreationForm):
