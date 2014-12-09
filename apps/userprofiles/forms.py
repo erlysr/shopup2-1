@@ -4,6 +4,11 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, Field, Submit, HTML, Div
+from crispy_forms.bootstrap import FormActions, PrependedText
 
 
 class ProfileForm(UserCreationForm):
@@ -52,6 +57,20 @@ class EmailAuthenticationForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.user_cache = None
         super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_action = reverse('userprofiles:signin')
+        self.helper.form_class = 'forma'
+        self.helper.form_method = 'post'
+        self.helper.layout = Layout(
+            Fieldset(
+                'email',
+                'password'
+            ),
+            FormActions(
+                Submit('save', 'save')
+            )
+        )
+
 
     def clean(self):
         email = self.cleaned_data.get('email')

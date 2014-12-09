@@ -1,39 +1,40 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
-
+{% load crispy_forms_tags %}
 
 
 {% block content %}
-	<!-- ----------------- VENTANAS MODALES -------------------- -->
-	<!-- ---------------------- SECCION LOGIN ----------------------------- -->
-	<div class="ventana">
-		<div id="body-login">
-			<div id="cerrar">
-				<a href="javascript:closeVentana();">Cerrar X</a>
-			</div>
-			<section class="seccion-superior">
-				<figure>
-					<img class="pleca" src="{% static 'img/pleca-clean.png' %}"></img>
-				</figure>
-				<form class="forma" action="{% url 'userprofiles:signin' %}" method="post">
-					{% csrf_token %}
-					{{form_login.as_p}}
-					<input type="submit" value="Ingresar">
-				</form>
-				<figure class="curvas-cont">
-					<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
-				</figure>
-			</section>
-			<section class="seccion-inferior">
-				<div class="container-blanco">
-					<div class="ren1">
-						<a class="liga-btn" href="">
-							<div id="boton">Iniciar Sesión
-							</div>
-						</a>
-					</div>
+<!-- ----------------- VENTANAS MODALES -------------------- -->
+<!-- ---------------------- SECCION LOGIN ----------------------------- -->
+<div class="ventana">
+	<div id="body-login">
+		<div id="cerrar">
+			<a href="javascript:closeVentana();">Cerrar X</a>
+		</div>
+		<section class="seccion-superior">
+			<figure>
+				<img class="pleca" src="{% static 'img/pleca-clean.png' %}"></img>
+			</figure>
+			{% crispy form_login %}
+			<!-- <form class="forma" action="" method="post">
+				{% csrf_token %}
+				{{form_login.as_p}}
+				<input type="submit" value="Ingresar">
+			</form> -->
+			<figure class="curvas-cont">
+				<img class="curvas" src="{% static 'img/lineacurva-blanca.png' %}"></img>
+			</figure>
+		</section>
+		<section class="seccion-inferior">
+			<div class="container-blanco">
+				<div class="ren1">
+					<a class="liga-btn" href="">
+						<div id="boton">Iniciar Sesión
+						</div>
+					</a>
+				</div>
 
-					<div class="ren2">
+				<div class="ren2">
 						<!-- <p>
 							¿Has olvidado tu contraseña?
 						</p> -->
@@ -45,7 +46,7 @@
 			</section>
 		</div>
 	</div>
-				<!-- ---------------------- VENTANA REGISTRO ----------------------------- -->
+	<!-- ---------------------- VENTANA REGISTRO ----------------------------- -->
 	<div class="ventana-registro">
 		<div id="body-registro-usuario">
 			<div id="cerrar">
@@ -74,7 +75,7 @@
 					</figure>
 					<form class="foto-form">
 						<br>
-							<input type="file" class="foto-btn"/>
+						<input type="file" class="foto-btn"/>
 						<br>
 					</form>
 					<figure>
@@ -93,24 +94,24 @@
 				</div>
 			</section>
 		</div>
-		
+
 	</div>
-				<!-- ---------------------- VENTANA RENTAS ----------------------------- -->
+	<!-- ---------------------- VENTANA RENTAS ----------------------------- -->
 	<div class="ventana-rentas">
 		<div id="body-como-funciona">
 			<div id="cerrar">
-					<a href="javascript:closeVentanaRentas();">Cerrar X</a>
+				<a href="javascript:closeVentanaRentas();">Cerrar X</a>
 			</div>
 			<figure>
 				<img class="imagen-como-funciona" src="{% static 'img/rentas_1280.jpg' %}">
 			</figure>
 		</div>
 	</div>
-			<!-- ---------------------- VENTANA BUSCAS ----------------------------- -->
+	<!-- ---------------------- VENTANA BUSCAS ----------------------------- -->
 	<div class="ventana-buscas">
 		<div id="body-como-funciona">
 			<div id="cerrar">
-					<a href="javascript:closeVentanaBuscas();">Cerrar X</a>
+				<a href="javascript:closeVentanaBuscas();">Cerrar X</a>
 			</div>
 			<figure>
 				<img class="imagen-como-funciona" src="{% static 'img/buscas_1280.jpg' %}">
@@ -167,7 +168,7 @@
 					<p class="titulo-label1">lo
 					</p>
 					<p class="titulo-label2">popular
-					</p>	
+					</p>
 				</div>
 				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
 				</a>
@@ -212,7 +213,7 @@
 				</p>
 			</div>
 			{% empty %}
-				<div class="espacio-cont">No hay tiendas todavia</div>
+			<div class="espacio-cont">No hay tiendas todavia</div>
 			{% endfor %}
 
 		</div>
@@ -240,7 +241,7 @@
 			<div class="tiendas-encabezado">
 				<div class="titulo-labels">
 					<p class="titulo-label1">distrito federal
-					</p>	
+					</p>
 				</div>
 				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
 				</a>
@@ -410,7 +411,7 @@
 			<div class="tiendas-encabezado">
 				<div class="titulo-labels">
 					<p class="titulo-label1">monterrey
-					</p>	
+					</p>
 				</div>
 				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
 				</a>
@@ -580,7 +581,7 @@
 			<div class="tiendas-encabezado">
 				<div class="titulo-labels">
 					<p class="titulo-label1">guadalajara
-					</p>	
+					</p>
 				</div>
 				<a class="quiero-mas-boton" href="#">¡Quiero ver más!
 				</a>
@@ -783,4 +784,4 @@
 		</figure>
 	</section>
 
-{% endblock content %}
+	{% endblock content %}
