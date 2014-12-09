@@ -36,14 +36,16 @@ class ProfileForm(UserCreationForm):
         self.helper.form_class = 'forma'
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
-            Fieldset(
-                '',
-                'first_name',
-                'last_name',
-                'username',
-                'email',
-                'password1',
-                'password2',
+            Multifield(
+                'Llena los espacios',
+                Div(
+                    'first_name',
+                    'last_name',
+                    'username',
+                    'email',
+                    'password1',
+                    'password2'
+                ),
                 'user_phone',
                 'avatar',
                 'calification'
