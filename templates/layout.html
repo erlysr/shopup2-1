@@ -66,12 +66,9 @@
             <p class="nombre-usuario">Bienvenido: {{user.first_name}}</p>
             <a class="salir-link" href="{% url 'userprofiles:logout' %}">Salir</a>
         {% else %}
-            <a class="salir-link" href="{% url 'userprofiles:signin' %}">Entrar</a>
+            <a class="salir-link" href="javascript:openVentana();">Entrar</a>
         {% endif %}
 		<ul class="menu-superior">
-			<li class="registra-tienda-opcion">
-				<a class="registra-tienda-link" href="javascript:openVentana();">Entrar</a>
-			</li>
 			{% if user.is_authenticated %}
             <li class="registra-tienda-opcion">
                 <a class="registra-tienda-link" href="{% url 'stores:reg-store-1' %}">Registrar mi tienda</a>
