@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, FormView, RedirectView
 
+from core.minxins import LoginRequired
+
 from . import forms
 from . models import UserProfile
 
@@ -72,7 +74,7 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 
-class ProfileView(TemplateView):
+class ProfileView(TemplateView, LoginRequired):
 
     template_name = 'login_in.html'
 
