@@ -46,11 +46,11 @@ INSTALLED_APPS = (
     'store_requests',
     'userprofiles',
     'tabulators',
+    'topups',
+    'popular_topups',
     # 'byzone_topups',
     # 'news',
-    # 'popular_topups',
     # 'rent_types',
-    # 'topups',
 )
 
 MIDDLEWARE_CLASSES = (
