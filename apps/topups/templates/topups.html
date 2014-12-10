@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    <div class="row" style="margin-top: 3em;">
+        <ul>
+            {% for topup in object_list %}
+            <li>{{topup.topup_name}}</li>
+            <li>
+                <img src="{{topup.image1.url}}" alt="">
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
