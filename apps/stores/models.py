@@ -32,6 +32,9 @@ class StatusType(models.Model):
 
 class Store(models.Model):
 
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
     user = models.ForeignKey(User, blank=True, null=True)
 
     # 1ra Forma:: Registro de tienda
