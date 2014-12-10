@@ -2,10 +2,12 @@ from django.db import models
 
 
 class Topup(models.Model):
+
     topup_name = models.CharField(max_length=255)
     image1 = models.ImageField(upload_to='topups')
     image2 = models.ImageField(upload_to='topups', blank=True)
     image3 = models.ImageField(upload_to='topups', blank=True)
+    slug = models.SlugField()
 
     def __unicode__(self):
         return self.topup_name
