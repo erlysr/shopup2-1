@@ -1,3 +1,11 @@
-from django.shortcuts import render
+# -*- coding: utf-8 -*-
 
-# Create your views here.
+from django.views.generic import ListView
+
+from . models import Topup
+
+
+class TopupList(ListView):
+
+    template_name = 'topups.html'
+    model = Topup

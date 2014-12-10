@@ -22,6 +22,7 @@ urlpatterns = patterns(
     url(r'^', include('userprofiles.urls', namespace='userprofiles')),
     url(r'^stores/', include('stores.urls', namespace='stores')),
     url(r'^request/', include('store_requests.urls', namespace='storerequest')),
+    url(r'^topups/', include('topups.urls', namespace='topups')),
 
     # urls directas
     # url(

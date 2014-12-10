@@ -82,6 +82,8 @@ class RegStoreStepFourView(FormView):
         store.twitter = data['twitter']
         store.youtube = data['youtube']
         store.logo = logo
+        store.status_id = 1
+        store.price = float(0)
         if form.cleaned_data['image2']:
             store.image2 = form.cleaned_data['image2']
         if form.cleaned_data['image3']:
