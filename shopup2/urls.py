@@ -42,17 +42,17 @@ urlpatterns = patterns(
         name='topup_list'
     ),
     url(
-        r'^stores_topups/$',
+        r'^stores/topups/$',
         StoreListView.as_view(),
         name='stores_topups_list'
     ),
     url(
-        r'^stores_topups/(?P<tabulator>[\w\-]+)/$',
+        r'^stores/topups/(?P<tabulator>[\w\-]+)/$',
         StoreListView.as_view(),
         name='stores_topups_list'
     ),
     url(
-        r'^store_detail/(?P<store_name>[\w\-]+)/$',
+        r'^store/detail/(?P<store_name>[\w\-]+)/$',
         StoreDetailView.as_view(),
         name='store_detail'
     ),
